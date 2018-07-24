@@ -5,8 +5,9 @@ logging:
 
 wechat:
   mp:
-    appId:wx8f18aee9694d50b0
-    secret:0421a7e4d0305e733d67f7a71d64f503
-    token:123456
+    appId: wx8f18aee9694d50b0
+    secret: 0421a7e4d0305e733d67f7a71d64f503
+    token: 123456
+    aesKey: SHA1
 server:
   port: 8080
