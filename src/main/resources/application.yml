@@ -1,0 +1,12 @@
+logging:
+  level:
+    org.springframework.web: DEBUG
+    com.github.binarywang.demo.wx.mp: DEBUG
+
+wechat:
+  mp:
+    appId:wx8f18aee9694d50b0
+    secret:0421a7e4d0305e733d67f7a71d64f503
+    token:123456
+server:
+  port: 8080
