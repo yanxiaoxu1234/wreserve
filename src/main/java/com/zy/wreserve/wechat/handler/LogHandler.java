@@ -1,7 +1,7 @@
 package com.zy.wreserve.wechat.handler;
 
 
-import com.zy.wreserve.wechat.utils.JsonUtils;
+import com.zy.wreserve.common.utils.JsonUtils;
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;

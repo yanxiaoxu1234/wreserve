@@ -1,4 +1,4 @@
-package com.zy.wreserve.wechat.config;
+package com.zy.wreserve.common.config;
 
 import com.zy.wreserve.wechat.handler.*;
 import me.chanjar.weixin.mp.api.WxMpConfigStorage;

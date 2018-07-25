@@ -18,3 +18,42 @@ spring:
     username: root
     password: z951837256
 
+#mybatis
+mybatis-plus:
+  mapper-locations: classpath:/com/zy/*/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.zy.wreserve.*.entity
+  global-config:
+    #刷新mapper 调试神器
+    db-config:
+      #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+      id-type: 2
+      #字段策略 0:"忽略判断",1:"非 NULL 判断"),2:"非空判断"
+      field-strategy: not_empty
+      #驼峰下划线转换
+      column-underline: true
+      #数据库大写下划线转换
+      #capital-mode: true
+      #逻辑删除配置
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+      db-type: h2
+    refresh: true
+      #自定义填充策略接口实现
+      #meta-object-handler: com.baomidou.springboot.xxx
+      #自定义SQL注入器
+      #sql-injector: com.baomidou.springboot.xxx
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+#logging
+#logging:
+#  level: warn
+#
+# 单点信息配置，全部可无
+
+kisso:
+  config:
+    signkey: C691d971EJ3H376G81   # 对称签名密钥
+    cookieName: kisso             # COOKIE 名称
+
