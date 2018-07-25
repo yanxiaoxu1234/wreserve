@@ -1,7 +1,7 @@
-package com.zy.handler;
+package com.zy.wreserve.wechat.handler;
 
-import com.zy.builder.TextBuilder;
-import com.zy.utils.JsonUtils;
+import com.zy.wreserve.wechat.builder.TextBuilder;
+import com.zy.wreserve.wechat.utils.JsonUtils;
 import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;

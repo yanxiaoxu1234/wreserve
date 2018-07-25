@@ -1,6 +1,6 @@
-package com.zy.config;
+package com.zy.wreserve.wechat.config;
 
-import com.zy.handler.*;
+import com.zy.wreserve.wechat.handler.*;
 import me.chanjar.weixin.mp.api.WxMpConfigStorage;
 import me.chanjar.weixin.mp.api.WxMpInMemoryConfigStorage;
 import me.chanjar.weixin.mp.api.WxMpMessageRouter;

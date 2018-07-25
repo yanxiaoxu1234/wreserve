@@ -1,4 +1,4 @@
-package com.zy.controller;
+package com.zy.wreserve.wechat.controller;
 
 import me.chanjar.weixin.mp.api.WxMpMessageRouter;
 import me.chanjar.weixin.mp.api.WxMpService;

@@ -1,4 +1,4 @@
-package com.zy.handler;
+package com.zy.wreserve.wechat.handler;
 
 /**
  * @author Binary Wang(https://github.com/binarywang)

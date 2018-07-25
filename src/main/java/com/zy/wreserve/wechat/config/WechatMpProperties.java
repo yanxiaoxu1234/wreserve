@@ -1,4 +1,4 @@
-package com.zy.config;
+package com.zy.wreserve.wechat.config;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;

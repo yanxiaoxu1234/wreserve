@@ -1,4 +1,4 @@
-package com.zy.handler;
+package com.zy.wreserve.wechat.handler;
 
 import me.chanjar.weixin.mp.api.WxMpMessageHandler;
 import org.slf4j.Logger;

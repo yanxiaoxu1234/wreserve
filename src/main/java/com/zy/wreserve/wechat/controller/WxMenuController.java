@@ -1,4 +1,4 @@
-package com.zy.controller;
+package com.zy.wreserve.wechat.controller;
 
 import me.chanjar.weixin.common.bean.menu.WxMenu;
 import me.chanjar.weixin.common.bean.menu.WxMenuButton;
