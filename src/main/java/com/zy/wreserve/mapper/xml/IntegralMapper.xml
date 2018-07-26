@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zy.wreserve.mapper.IntegralMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.Integral">
+        <id column="integral_id" property="integralId" />
+        <result column="user_id" property="userId" />
+        <result column="online_integral" property="onlineIntegral" />
+        <result column="offline_integral" property="offlineIntegral" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="is_del" property="isDel" />
+    </resultMap>
+
+</mapper>

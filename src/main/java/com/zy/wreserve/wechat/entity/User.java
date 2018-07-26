@@ -1,120 +1,217 @@
 package com.zy.wreserve.wechat.entity;
 
-import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableField;
-import com.baomidou.mybatisplus.annotations.TableName;
-
 import java.io.Serializable;
-import java.util.List;
-import java.util.Set;
 
+import com.baomidou.mybatisplus.enums.IdType;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.activerecord.Model;
+import java.io.Serializable;
 
 /**
  * <p>
- * 
+ * 用户表
  * </p>
  *
- * @author Lucare
- * @since 2017-02-24
+ * @author zy123
+ * @since 2018-07-26
  */
-@TableName("t_user")
 public class User extends Model<User> {
 
     private static final long serialVersionUID = 1L;
 
-	private Long id;
-	private String username;
-	private String password;
-	private String phone;
-	private int state;
-	private int sex;
-	private String remarks;
+    /**
+     * 主键Id
+     */
+    @TableId(value = "user_id", type = IdType.AUTO)
+    private Long userId;
+    /**
+     * 微信open_id
+     */
+    @TableField("open_id")
+    private String openId;
+    /**
+     * 用户电话-账号
+     */
+    @TableField("user_phone")
+    private String userPhone;
+    /**
+     * 0 会员 1员工
+     */
+    @TableField("role_id")
+    private Integer roleId;
+    /**
+     * 用户名称
+     */
+    @TableField("user_name")
+    private String userName;
+    /**
+     * 性别 0女 1男
+     */
+    private Integer sex;
+    /**
+     * 用户状态 0正常 1锁定
+     */
+    private Integer status;
+    @TableField("is_authorize")
+    private Long isAuthorize;
+    /**
+     * 职务Id
+     */
+    @TableField("position_id")
+    private Integer positionId;
+    /**
+     * 标签列表
+     */
+    @TableField("tag_list")
+    private String tagList;
+    /**
+     * 好评率
+     */
+    @TableField("praise_average")
+    private String praiseAverage;
+    @TableField("create_time")
+    private Long createTime;
+    @TableField("update_time")
+    private Long updateTime;
+    @TableField("is_del")
+    private Integer isDel;
 
-	@TableField(exist = false)
-	private List<Role> roleList;
 
-	public User() {
-	}
+    public Long getUserId() {
+        return userId;
+    }
 
-	public User(String username, String password, String phone) {
-		this.username = username;
-		this.password = password;
-		this.phone = phone;
-	}
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 
-	public User(Long id, String username, String phone) {
-		this.id = id;
-		this.username = username;
-		this.phone = phone;
-	}
+    public String getOpenId() {
+        return openId;
+    }
 
-	public Long getId() {
-		return id;
-	}
+    public void setOpenId(String openId) {
+        this.openId = openId;
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public String getUserPhone() {
+        return userPhone;
+    }
 
-	public String getUsername() {
-		return username;
-	}
+    public void setUserPhone(String userPhone) {
+        this.userPhone = userPhone;
+    }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public Integer getRoleId() {
+        return roleId;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getUserName() {
+        return userName;
+    }
 
-	public String getPhone() {
-		return phone;
-	}
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
 
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
+    public Integer getSex() {
+        return sex;
+    }
 
-	public int getState() {
-		return state;
-	}
+    public void setSex(Integer sex) {
+        this.sex = sex;
+    }
 
-	public void setState(int state) {
-		this.state = state;
-	}
+    public Integer getStatus() {
+        return status;
+    }
 
-	public List<Role> getRoleList() {
-		return roleList;
-	}
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
 
-	public void setRoleList(List<Role> roleList) {
-		this.roleList = roleList;
-	}
+    public Long getIsAuthorize() {
+        return isAuthorize;
+    }
 
-	public int getSex() {
-		return sex;
-	}
+    public void setIsAuthorize(Long isAuthorize) {
+        this.isAuthorize = isAuthorize;
+    }
 
-	public void setSex(int sex) {
-		this.sex = sex;
-	}
+    public Integer getPositionId() {
+        return positionId;
+    }
 
-	public String getRemarks() {
-		return remarks;
-	}
+    public void setPositionId(Integer positionId) {
+        this.positionId = positionId;
+    }
 
-	public void setRemarks(String remarks) {
-		this.remarks = remarks;
-	}
+    public String getTagList() {
+        return tagList;
+    }
 
-	@Override
-	protected Serializable pkVal() {
-		return this.id;
-	}
+    public void setTagList(String tagList) {
+        this.tagList = tagList;
+    }
 
+    public String getPraiseAverage() {
+        return praiseAverage;
+    }
+
+    public void setPraiseAverage(String praiseAverage) {
+        this.praiseAverage = praiseAverage;
+    }
+
+    public Long getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Long createTime) {
+        this.createTime = createTime;
+    }
+
+    public Long getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Long updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Integer getIsDel() {
+        return isDel;
+    }
+
+    public void setIsDel(Integer isDel) {
+        this.isDel = isDel;
+    }
+
+    @Override
+    protected Serializable pkVal() {
+        return this.userId;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+        "userId=" + userId +
+        ", openId=" + openId +
+        ", userPhone=" + userPhone +
+        ", roleId=" + roleId +
+        ", userName=" + userName +
+        ", sex=" + sex +
+        ", status=" + status +
+        ", isAuthorize=" + isAuthorize +
+        ", positionId=" + positionId +
+        ", tagList=" + tagList +
+        ", praiseAverage=" + praiseAverage +
+        ", createTime=" + createTime +
+        ", updateTime=" + updateTime +
+        ", isDel=" + isDel +
+        "}";
+    }
 }

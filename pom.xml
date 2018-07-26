@@ -44,10 +44,10 @@
             <artifactId>weixin-java-mp</artifactId>
             <version>${weixin-java-mp.version}</version>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-log4j</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-log4j</artifactId>-->
+        <!--</dependency>-->
        <!--redis缓存-->
         <dependency>
             <groupId>redis.clients</groupId>

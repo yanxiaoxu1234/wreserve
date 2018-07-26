@@ -1,29 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.fcs.admin.mapper.UserMapper">
+<mapper namespace="com.zy.wreserve.mapper.UserMapper">
 
-	<!-- 通用查询映射结果 -->
-	<resultMap id="BaseResultMap" type="com.fcs.admin.entity.User">
-		<id column="id" property="id" />
-		<result column="username" property="username" />
-		<result column="password" property="password" />
-		<result column="phone" property="phone" />
-		<result column="sex" property="sex" />
-		<result column="state" property="state" />
-		<result column="remarks" property="remarks" />
-		<!--<collection property="roleList"  column="id" ofType="Role">-->
-			<!--<id property="id" column="id"/>-->
-			<!--<result property="name" column="name"/>-->
-			<!--<result property="description" column="description"/>-->
-		<!--</collection>-->
-	</resultMap>
-
-	<select id="findByName" resultType="com.fcs.admin.entity.User" parameterType="java.lang.String">
-		SELECT id,username,password,phone from t_user where username=#{name}
-	</select>
-
-	<select id="selectUserList" resultType="User">
-		SELECT id,username,phone,sex,state,remarks FROM t_user
-	</select>
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.User">
+        <id column="user_id" property="userId" />
+        <result column="open_id" property="openId" />
+        <result column="user_phone" property="userPhone" />
+        <result column="role_id" property="roleId" />
+        <result column="user_name" property="userName" />
+        <result column="sex" property="sex" />
+        <result column="status" property="status" />
+        <result column="is_authorize" property="isAuthorize" />
+        <result column="position_id" property="positionId" />
+        <result column="tag_list" property="tagList" />
+        <result column="praise_average" property="praiseAverage" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+        <result column="is_del" property="isDel" />
+    </resultMap>
 
 </mapper>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zy.wreserve.mapper.User_wechatMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.User_wechat">
+        <id column="openId" property="openId" />
+        <result column="subscribe" property="subscribe" />
+        <result column="nickname" property="nickname" />
+        <result column="sex" property="sex" />
+        <result column="language" property="language" />
+        <result column="city" property="city" />
+        <result column="province" property="province" />
+        <result column="country" property="country" />
+        <result column="headImgUrl" property="headImgUrl" />
+        <result column="subscribeTime" property="subscribeTime" />
+        <result column="unionId" property="unionId" />
+        <result column="sexId" property="sexId" />
+        <result column="remark" property="remark" />
+        <result column="groupId" property="groupId" />
+        <result column="tagIds" property="tagIds" />
+        <result column="is_del" property="is_del" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+    </resultMap>
+
+</mapper>
