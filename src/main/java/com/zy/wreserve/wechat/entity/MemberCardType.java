@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
 
 /**
@@ -14,27 +12,22 @@ import java.io.Serializable;
  * 会员卡类型表
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
-@TableName("member_card_type")
 public class MemberCardType extends Model<MemberCardType> {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "member_card_type_id", type = IdType.AUTO)
-    private Long memberCardTypeId;
-    @TableField("member_card_type_name")
-    private String memberCardTypeName;
+    private Long member_card_type_id;
+    private String member_card_type_name;
     /**
      * 最小单位分
      */
-    @TableField("member_type_price")
-    private Integer memberTypePrice;
-    @TableField("member_card_type_color")
-    private String memberCardTypeColor;
-    @TableField("valid_time")
-    private Long validTime;
+    private Integer member_type_price;
+    private String member_card_type_color;
+    private Long valid_time;
     /**
      * 折扣
      */
@@ -42,54 +35,50 @@ public class MemberCardType extends Model<MemberCardType> {
     /**
      * 是否永久 0否 1是
      */
-    @TableField("is_forever")
-    private Integer isForever;
-    @TableField("create_tame")
-    private Long createTame;
-    @TableField("update_time")
-    private Long updateTime;
-    @TableField("is_del")
-    private Integer isDel;
+    private Integer is_forever;
+    private Long create_tame;
+    private Long update_time;
+    private Integer is_del;
 
 
-    public Long getMemberCardTypeId() {
-        return memberCardTypeId;
+    public Long getMember_card_type_id() {
+        return member_card_type_id;
     }
 
-    public void setMemberCardTypeId(Long memberCardTypeId) {
-        this.memberCardTypeId = memberCardTypeId;
+    public void setMember_card_type_id(Long member_card_type_id) {
+        this.member_card_type_id = member_card_type_id;
     }
 
-    public String getMemberCardTypeName() {
-        return memberCardTypeName;
+    public String getMember_card_type_name() {
+        return member_card_type_name;
     }
 
-    public void setMemberCardTypeName(String memberCardTypeName) {
-        this.memberCardTypeName = memberCardTypeName;
+    public void setMember_card_type_name(String member_card_type_name) {
+        this.member_card_type_name = member_card_type_name;
     }
 
-    public Integer getMemberTypePrice() {
-        return memberTypePrice;
+    public Integer getMember_type_price() {
+        return member_type_price;
     }
 
-    public void setMemberTypePrice(Integer memberTypePrice) {
-        this.memberTypePrice = memberTypePrice;
+    public void setMember_type_price(Integer member_type_price) {
+        this.member_type_price = member_type_price;
     }
 
-    public String getMemberCardTypeColor() {
-        return memberCardTypeColor;
+    public String getMember_card_type_color() {
+        return member_card_type_color;
     }
 
-    public void setMemberCardTypeColor(String memberCardTypeColor) {
-        this.memberCardTypeColor = memberCardTypeColor;
+    public void setMember_card_type_color(String member_card_type_color) {
+        this.member_card_type_color = member_card_type_color;
     }
 
-    public Long getValidTime() {
-        return validTime;
+    public Long getValid_time() {
+        return valid_time;
     }
 
-    public void setValidTime(Long validTime) {
-        this.validTime = validTime;
+    public void setValid_time(Long valid_time) {
+        this.valid_time = valid_time;
     }
 
     public String getDiscounts() {
@@ -100,56 +89,56 @@ public class MemberCardType extends Model<MemberCardType> {
         this.discounts = discounts;
     }
 
-    public Integer getIsForever() {
-        return isForever;
+    public Integer getIs_forever() {
+        return is_forever;
     }
 
-    public void setIsForever(Integer isForever) {
-        this.isForever = isForever;
+    public void setIs_forever(Integer is_forever) {
+        this.is_forever = is_forever;
     }
 
-    public Long getCreateTame() {
-        return createTame;
+    public Long getCreate_tame() {
+        return create_tame;
     }
 
-    public void setCreateTame(Long createTame) {
-        this.createTame = createTame;
+    public void setCreate_tame(Long create_tame) {
+        this.create_tame = create_tame;
     }
 
-    public Long getUpdateTime() {
-        return updateTime;
+    public Long getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdate_time(Long update_time) {
+        this.update_time = update_time;
     }
 
-    public Integer getIsDel() {
-        return isDel;
+    public Integer getIs_del() {
+        return is_del;
     }
 
-    public void setIsDel(Integer isDel) {
-        this.isDel = isDel;
+    public void setIs_del(Integer is_del) {
+        this.is_del = is_del;
     }
 
     @Override
     protected Serializable pkVal() {
-        return this.memberCardTypeId;
+        return this.member_card_type_id;
     }
 
     @Override
     public String toString() {
-        return "MemberCardType{" +
-        "memberCardTypeId=" + memberCardTypeId +
-        ", memberCardTypeName=" + memberCardTypeName +
-        ", memberTypePrice=" + memberTypePrice +
-        ", memberCardTypeColor=" + memberCardTypeColor +
-        ", validTime=" + validTime +
+        return "Member_card_type{" +
+        "member_card_type_id=" + member_card_type_id +
+        ", member_card_type_name=" + member_card_type_name +
+        ", member_type_price=" + member_type_price +
+        ", member_card_type_color=" + member_card_type_color +
+        ", valid_time=" + valid_time +
         ", discounts=" + discounts +
-        ", isForever=" + isForever +
-        ", createTame=" + createTame +
-        ", updateTime=" + updateTime +
-        ", isDel=" + isDel +
+        ", is_forever=" + is_forever +
+        ", create_tame=" + create_tame +
+        ", update_time=" + update_time +
+        ", is_del=" + is_del +
         "}";
     }
 }

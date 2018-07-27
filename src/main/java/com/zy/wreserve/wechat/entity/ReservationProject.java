@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
 
 /**
@@ -14,10 +12,9 @@ import java.io.Serializable;
  * 服务项目表
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
-@TableName("reservation_project")
 public class ReservationProject extends Model<ReservationProject> {
 
     private static final long serialVersionUID = 1L;
@@ -26,26 +23,25 @@ public class ReservationProject extends Model<ReservationProject> {
      * 主键Id
      */
     @TableId(value = "reservation_project_id", type = IdType.AUTO)
-    private Long reservationProjectId;
-    @TableField("reservation_project_name")
-    private String reservationProjectName;
+    private Long reservation_project_id;
+    private String reservation_project_name;
     private Integer sort;
 
 
-    public Long getReservationProjectId() {
-        return reservationProjectId;
+    public Long getReservation_project_id() {
+        return reservation_project_id;
     }
 
-    public void setReservationProjectId(Long reservationProjectId) {
-        this.reservationProjectId = reservationProjectId;
+    public void setReservation_project_id(Long reservation_project_id) {
+        this.reservation_project_id = reservation_project_id;
     }
 
-    public String getReservationProjectName() {
-        return reservationProjectName;
+    public String getReservation_project_name() {
+        return reservation_project_name;
     }
 
-    public void setReservationProjectName(String reservationProjectName) {
-        this.reservationProjectName = reservationProjectName;
+    public void setReservation_project_name(String reservation_project_name) {
+        this.reservation_project_name = reservation_project_name;
     }
 
     public Integer getSort() {
@@ -58,14 +54,14 @@ public class ReservationProject extends Model<ReservationProject> {
 
     @Override
     protected Serializable pkVal() {
-        return this.reservationProjectId;
+        return this.reservation_project_id;
     }
 
     @Override
     public String toString() {
-        return "ReservationProject{" +
-        "reservationProjectId=" + reservationProjectId +
-        ", reservationProjectName=" + reservationProjectName +
+        return "Reservation_project{" +
+        "reservation_project_id=" + reservation_project_id +
+        ", reservation_project_name=" + reservation_project_name +
         ", sort=" + sort +
         "}";
     }

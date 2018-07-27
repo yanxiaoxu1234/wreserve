@@ -4,14 +4,14 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.Shop">
-        <id column="shop_id" property="shopId" />
-        <result column="shop_name" property="shopName" />
-        <result column="shop_phone" property="shopPhone" />
-        <result column="shop_address_detail" property="shopAddressDetail" />
-        <result column="shop_img" property="shopImg" />
-        <result column="create_time" property="createTime" />
-        <result column="update_time" property="updateTime" />
-        <result column="is_del" property="isDel" />
+        <id column="shop_id" property="shop_id" />
+        <result column="shop_name" property="shop_name" />
+        <result column="shop_phone" property="shop_phone" />
+        <result column="shop_address_detail" property="shop_address_detail" />
+        <result column="shop_img" property="shop_img" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+        <result column="is_del" property="is_del" />
     </resultMap>
 
 </mapper>

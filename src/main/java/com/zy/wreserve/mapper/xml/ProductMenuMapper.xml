@@ -4,12 +4,12 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.ProductMenu">
-        <id column="product_menu_id" property="productMenuId" />
-        <result column="product_menu_name" property="productMenuName" />
+        <id column="product_menu_id" property="product_menu_id" />
+        <result column="product_menu_name" property="product_menu_name" />
         <result column="sort" property="sort" />
-        <result column="create_time" property="createTime" />
-        <result column="update_time" property="updateTime" />
-        <result column="is_del" property="isDel" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+        <result column="is_del" property="is_del" />
     </resultMap>
 
 </mapper>

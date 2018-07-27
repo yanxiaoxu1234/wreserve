@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
 
 /**
@@ -14,10 +12,9 @@ import java.io.Serializable;
  * 作品展示评价表
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
-@TableName("evaluate_works_show")
 public class EvaluateWorksShow extends Model<EvaluateWorksShow> {
 
     private static final long serialVersionUID = 1L;
@@ -26,17 +23,15 @@ public class EvaluateWorksShow extends Model<EvaluateWorksShow> {
      * 主键Id
      */
     @TableId(value = "evaluate_works_show_id", type = IdType.AUTO)
-    private Long evaluateWorksShowId;
+    private Long evaluate_works_show_id;
     /**
      * 所在评论主Id
      */
-    @TableField("evaluate_primary_id")
-    private Long evaluatePrimaryId;
+    private Long evaluate_primary_id;
     /**
      * 作品Id
      */
-    @TableField("works_show_id")
-    private Long worksShowId;
+    private Long works_show_id;
     /**
      * 评论/回复内容
      */
@@ -44,43 +39,38 @@ public class EvaluateWorksShow extends Model<EvaluateWorksShow> {
     /**
      * 回复Id
      */
-    @TableField("reply_id")
-    private Long replyId;
+    private Long reply_id;
     /**
      * 用户Id
      */
-    @TableField("user_id")
-    private Long userId;
-    @TableField("create_time")
-    private Long createTime;
-    @TableField("update_time")
-    private Long updateTime;
-    @TableField("is_del")
-    private Integer isDel;
+    private Long user_id;
+    private Long create_time;
+    private Long update_time;
+    private Integer is_del;
 
 
-    public Long getEvaluateWorksShowId() {
-        return evaluateWorksShowId;
+    public Long getEvaluate_works_show_id() {
+        return evaluate_works_show_id;
     }
 
-    public void setEvaluateWorksShowId(Long evaluateWorksShowId) {
-        this.evaluateWorksShowId = evaluateWorksShowId;
+    public void setEvaluate_works_show_id(Long evaluate_works_show_id) {
+        this.evaluate_works_show_id = evaluate_works_show_id;
     }
 
-    public Long getEvaluatePrimaryId() {
-        return evaluatePrimaryId;
+    public Long getEvaluate_primary_id() {
+        return evaluate_primary_id;
     }
 
-    public void setEvaluatePrimaryId(Long evaluatePrimaryId) {
-        this.evaluatePrimaryId = evaluatePrimaryId;
+    public void setEvaluate_primary_id(Long evaluate_primary_id) {
+        this.evaluate_primary_id = evaluate_primary_id;
     }
 
-    public Long getWorksShowId() {
-        return worksShowId;
+    public Long getWorks_show_id() {
+        return works_show_id;
     }
 
-    public void setWorksShowId(Long worksShowId) {
-        this.worksShowId = worksShowId;
+    public void setWorks_show_id(Long works_show_id) {
+        this.works_show_id = works_show_id;
     }
 
     public String getContent() {
@@ -91,63 +81,63 @@ public class EvaluateWorksShow extends Model<EvaluateWorksShow> {
         this.content = content;
     }
 
-    public Long getReplyId() {
-        return replyId;
+    public Long getReply_id() {
+        return reply_id;
     }
 
-    public void setReplyId(Long replyId) {
-        this.replyId = replyId;
+    public void setReply_id(Long reply_id) {
+        this.reply_id = reply_id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getUser_id() {
+        return user_id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public Long getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Long create_time) {
+        this.create_time = create_time;
     }
 
-    public Long getUpdateTime() {
-        return updateTime;
+    public Long getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdate_time(Long update_time) {
+        this.update_time = update_time;
     }
 
-    public Integer getIsDel() {
-        return isDel;
+    public Integer getIs_del() {
+        return is_del;
     }
 
-    public void setIsDel(Integer isDel) {
-        this.isDel = isDel;
+    public void setIs_del(Integer is_del) {
+        this.is_del = is_del;
     }
 
     @Override
     protected Serializable pkVal() {
-        return this.evaluateWorksShowId;
+        return this.evaluate_works_show_id;
     }
 
     @Override
     public String toString() {
-        return "EvaluateWorksShow{" +
-        "evaluateWorksShowId=" + evaluateWorksShowId +
-        ", evaluatePrimaryId=" + evaluatePrimaryId +
-        ", worksShowId=" + worksShowId +
+        return "Evaluate_works_show{" +
+        "evaluate_works_show_id=" + evaluate_works_show_id +
+        ", evaluate_primary_id=" + evaluate_primary_id +
+        ", works_show_id=" + works_show_id +
         ", content=" + content +
-        ", replyId=" + replyId +
-        ", userId=" + userId +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", isDel=" + isDel +
+        ", reply_id=" + reply_id +
+        ", user_id=" + user_id +
+        ", create_time=" + create_time +
+        ", update_time=" + update_time +
+        ", is_del=" + is_del +
         "}";
     }
 }

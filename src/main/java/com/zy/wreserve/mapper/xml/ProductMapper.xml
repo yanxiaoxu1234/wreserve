@@ -4,16 +4,16 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.Product">
-        <id column="product_id" property="productId" />
-        <result column="product_title" property="productTitle" />
-        <result column="product_name" property="productName" />
-        <result column="product_menu_id" property="productMenuId" />
-        <result column="product_price" property="productPrice" />
-        <result column="product_img" property="productImg" />
+        <id column="product_id" property="product_id" />
+        <result column="product_title" property="product_title" />
+        <result column="product_name" property="product_name" />
+        <result column="product_menu_id" property="product_menu_id" />
+        <result column="product_price" property="product_price" />
+        <result column="product_img" property="product_img" />
         <result column="sales" property="sales" />
         <result column="inventory" property="inventory" />
-        <result column="is_recommend" property="isRecommend" />
-        <result column="product_detail_img" property="productDetailImg" />
+        <result column="is_recommend" property="is_recommend" />
+        <result column="product_detail_img" property="product_detail_img" />
     </resultMap>
 
 </mapper>

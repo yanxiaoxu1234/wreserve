@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
 
 /**
@@ -14,123 +12,114 @@ import java.io.Serializable;
  * 服务人员评价表
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
-@TableName("evaluate_service")
 public class EvaluateService extends Model<EvaluateService> {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "evaluate_detail_id", type = IdType.AUTO)
-    private Long evaluateDetailId;
-    @TableField("user_id")
-    private Long userId;
-    @TableField("service_user_id")
-    private Long serviceUserId;
-    @TableField("evaluate_grade")
-    private Integer evaluateGrade;
-    @TableField("evaluate_tag_name")
-    private String evaluateTagName;
-    @TableField("evaluate_remark")
-    private String evaluateRemark;
-    @TableField("create_time")
-    private Long createTime;
-    @TableField("update_time")
-    private Long updateTime;
-    @TableField("is_del")
-    private Integer isDel;
+    private Long evaluate_detail_id;
+    private Long user_id;
+    private Long service_user_id;
+    private Integer evaluate_grade;
+    private String evaluate_tag_name;
+    private String evaluate_remark;
+    private Long create_time;
+    private Long update_time;
+    private Integer is_del;
 
 
-    public Long getEvaluateDetailId() {
-        return evaluateDetailId;
+    public Long getEvaluate_detail_id() {
+        return evaluate_detail_id;
     }
 
-    public void setEvaluateDetailId(Long evaluateDetailId) {
-        this.evaluateDetailId = evaluateDetailId;
+    public void setEvaluate_detail_id(Long evaluate_detail_id) {
+        this.evaluate_detail_id = evaluate_detail_id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getUser_id() {
+        return user_id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
 
-    public Long getServiceUserId() {
-        return serviceUserId;
+    public Long getService_user_id() {
+        return service_user_id;
     }
 
-    public void setServiceUserId(Long serviceUserId) {
-        this.serviceUserId = serviceUserId;
+    public void setService_user_id(Long service_user_id) {
+        this.service_user_id = service_user_id;
     }
 
-    public Integer getEvaluateGrade() {
-        return evaluateGrade;
+    public Integer getEvaluate_grade() {
+        return evaluate_grade;
     }
 
-    public void setEvaluateGrade(Integer evaluateGrade) {
-        this.evaluateGrade = evaluateGrade;
+    public void setEvaluate_grade(Integer evaluate_grade) {
+        this.evaluate_grade = evaluate_grade;
     }
 
-    public String getEvaluateTagName() {
-        return evaluateTagName;
+    public String getEvaluate_tag_name() {
+        return evaluate_tag_name;
     }
 
-    public void setEvaluateTagName(String evaluateTagName) {
-        this.evaluateTagName = evaluateTagName;
+    public void setEvaluate_tag_name(String evaluate_tag_name) {
+        this.evaluate_tag_name = evaluate_tag_name;
     }
 
-    public String getEvaluateRemark() {
-        return evaluateRemark;
+    public String getEvaluate_remark() {
+        return evaluate_remark;
     }
 
-    public void setEvaluateRemark(String evaluateRemark) {
-        this.evaluateRemark = evaluateRemark;
+    public void setEvaluate_remark(String evaluate_remark) {
+        this.evaluate_remark = evaluate_remark;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public Long getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Long create_time) {
+        this.create_time = create_time;
     }
 
-    public Long getUpdateTime() {
-        return updateTime;
+    public Long getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdate_time(Long update_time) {
+        this.update_time = update_time;
     }
 
-    public Integer getIsDel() {
-        return isDel;
+    public Integer getIs_del() {
+        return is_del;
     }
 
-    public void setIsDel(Integer isDel) {
-        this.isDel = isDel;
+    public void setIs_del(Integer is_del) {
+        this.is_del = is_del;
     }
 
     @Override
     protected Serializable pkVal() {
-        return this.evaluateDetailId;
+        return this.evaluate_detail_id;
     }
 
     @Override
     public String toString() {
-        return "EvaluateService{" +
-        "evaluateDetailId=" + evaluateDetailId +
-        ", userId=" + userId +
-        ", serviceUserId=" + serviceUserId +
-        ", evaluateGrade=" + evaluateGrade +
-        ", evaluateTagName=" + evaluateTagName +
-        ", evaluateRemark=" + evaluateRemark +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", isDel=" + isDel +
+        return "Evaluate_service{" +
+        "evaluate_detail_id=" + evaluate_detail_id +
+        ", user_id=" + user_id +
+        ", service_user_id=" + service_user_id +
+        ", evaluate_grade=" + evaluate_grade +
+        ", evaluate_tag_name=" + evaluate_tag_name +
+        ", evaluate_remark=" + evaluate_remark +
+        ", create_time=" + create_time +
+        ", update_time=" + update_time +
+        ", is_del=" + is_del +
         "}";
     }
 }

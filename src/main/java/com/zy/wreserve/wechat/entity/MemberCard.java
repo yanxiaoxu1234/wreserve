@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
 
 /**
@@ -14,33 +12,24 @@ import java.io.Serializable;
  * 会员卡表
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
-@TableName("member_card")
 public class MemberCard extends Model<MemberCard> {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "member_card_id", type = IdType.AUTO)
-    private Long memberCardId;
-    @TableField("member_card_type_id")
-    private Long memberCardTypeId;
-    @TableField("member_card_type_name")
-    private String memberCardTypeName;
-    @TableField("member_card_type_color")
-    private String memberCardTypeColor;
-    @TableField("user_id")
-    private Long userId;
-    @TableField("member_card_number")
-    private String memberCardNumber;
-    @TableField("remainder_price")
-    private Integer remainderPrice;
+    private Long member_card_id;
+    private Long member_card_type_id;
+    private String member_card_type_name;
+    private String member_card_type_color;
+    private Long user_id;
+    private String member_card_number;
+    private Integer remainder_price;
     private String discounts;
-    @TableField("is_forver")
-    private Integer isForver;
-    @TableField("create_time")
-    private Long createTime;
+    private Integer is_forver;
+    private Long create_time;
     private Long deadline;
     /**
      * 状态 0正常 1冻结
@@ -49,64 +38,63 @@ public class MemberCard extends Model<MemberCard> {
     /**
      * 是否删除 0否 1是
      */
-    @TableField("is_del")
-    private Integer isDel;
+    private Integer is_del;
 
 
-    public Long getMemberCardId() {
-        return memberCardId;
+    public Long getMember_card_id() {
+        return member_card_id;
     }
 
-    public void setMemberCardId(Long memberCardId) {
-        this.memberCardId = memberCardId;
+    public void setMember_card_id(Long member_card_id) {
+        this.member_card_id = member_card_id;
     }
 
-    public Long getMemberCardTypeId() {
-        return memberCardTypeId;
+    public Long getMember_card_type_id() {
+        return member_card_type_id;
     }
 
-    public void setMemberCardTypeId(Long memberCardTypeId) {
-        this.memberCardTypeId = memberCardTypeId;
+    public void setMember_card_type_id(Long member_card_type_id) {
+        this.member_card_type_id = member_card_type_id;
     }
 
-    public String getMemberCardTypeName() {
-        return memberCardTypeName;
+    public String getMember_card_type_name() {
+        return member_card_type_name;
     }
 
-    public void setMemberCardTypeName(String memberCardTypeName) {
-        this.memberCardTypeName = memberCardTypeName;
+    public void setMember_card_type_name(String member_card_type_name) {
+        this.member_card_type_name = member_card_type_name;
     }
 
-    public String getMemberCardTypeColor() {
-        return memberCardTypeColor;
+    public String getMember_card_type_color() {
+        return member_card_type_color;
     }
 
-    public void setMemberCardTypeColor(String memberCardTypeColor) {
-        this.memberCardTypeColor = memberCardTypeColor;
+    public void setMember_card_type_color(String member_card_type_color) {
+        this.member_card_type_color = member_card_type_color;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getUser_id() {
+        return user_id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
 
-    public String getMemberCardNumber() {
-        return memberCardNumber;
+    public String getMember_card_number() {
+        return member_card_number;
     }
 
-    public void setMemberCardNumber(String memberCardNumber) {
-        this.memberCardNumber = memberCardNumber;
+    public void setMember_card_number(String member_card_number) {
+        this.member_card_number = member_card_number;
     }
 
-    public Integer getRemainderPrice() {
-        return remainderPrice;
+    public Integer getRemainder_price() {
+        return remainder_price;
     }
 
-    public void setRemainderPrice(Integer remainderPrice) {
-        this.remainderPrice = remainderPrice;
+    public void setRemainder_price(Integer remainder_price) {
+        this.remainder_price = remainder_price;
     }
 
     public String getDiscounts() {
@@ -117,20 +105,20 @@ public class MemberCard extends Model<MemberCard> {
         this.discounts = discounts;
     }
 
-    public Integer getIsForver() {
-        return isForver;
+    public Integer getIs_forver() {
+        return is_forver;
     }
 
-    public void setIsForver(Integer isForver) {
-        this.isForver = isForver;
+    public void setIs_forver(Integer is_forver) {
+        this.is_forver = is_forver;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public Long getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Long create_time) {
+        this.create_time = create_time;
     }
 
     public Long getDeadline() {
@@ -149,35 +137,35 @@ public class MemberCard extends Model<MemberCard> {
         this.status = status;
     }
 
-    public Integer getIsDel() {
-        return isDel;
+    public Integer getIs_del() {
+        return is_del;
     }
 
-    public void setIsDel(Integer isDel) {
-        this.isDel = isDel;
+    public void setIs_del(Integer is_del) {
+        this.is_del = is_del;
     }
 
     @Override
     protected Serializable pkVal() {
-        return this.memberCardId;
+        return this.member_card_id;
     }
 
     @Override
     public String toString() {
-        return "MemberCard{" +
-        "memberCardId=" + memberCardId +
-        ", memberCardTypeId=" + memberCardTypeId +
-        ", memberCardTypeName=" + memberCardTypeName +
-        ", memberCardTypeColor=" + memberCardTypeColor +
-        ", userId=" + userId +
-        ", memberCardNumber=" + memberCardNumber +
-        ", remainderPrice=" + remainderPrice +
+        return "Member_card{" +
+        "member_card_id=" + member_card_id +
+        ", member_card_type_id=" + member_card_type_id +
+        ", member_card_type_name=" + member_card_type_name +
+        ", member_card_type_color=" + member_card_type_color +
+        ", user_id=" + user_id +
+        ", member_card_number=" + member_card_number +
+        ", remainder_price=" + remainder_price +
         ", discounts=" + discounts +
-        ", isForver=" + isForver +
-        ", createTime=" + createTime +
+        ", is_forver=" + is_forver +
+        ", create_time=" + create_time +
         ", deadline=" + deadline +
         ", status=" + status +
-        ", isDel=" + isDel +
+        ", is_del=" + is_del +
         "}";
     }
 }

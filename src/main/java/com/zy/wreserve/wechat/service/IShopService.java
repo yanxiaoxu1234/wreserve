@@ -8,8 +8,8 @@ import com.baomidou.mybatisplus.service.IService;
  * 商家表 服务类
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
 public interface IShopService extends IService<Shop> {
 

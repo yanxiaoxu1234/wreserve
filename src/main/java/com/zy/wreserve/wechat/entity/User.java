@@ -2,19 +2,20 @@ package com.zy.wreserve.wechat.entity;
 
 import java.io.Serializable;
 
+import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * <p>
  * 用户表
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
 public class User extends Model<User> {
 
@@ -24,27 +25,23 @@ public class User extends Model<User> {
      * 主键Id
      */
     @TableId(value = "user_id", type = IdType.AUTO)
-    private Long userId;
+    private Long user_id;
     /**
      * 微信open_id
      */
-    @TableField("open_id")
-    private String openId;
+    private String open_id;
     /**
      * 用户电话-账号
      */
-    @TableField("user_phone")
-    private String userPhone;
+    private String user_phone;
     /**
      * 0 会员 1员工
      */
-    @TableField("role_id")
-    private Integer roleId;
+    private Integer role_id;
     /**
      * 用户名称
      */
-    @TableField("user_name")
-    private String userName;
+    private String user_name;
     /**
      * 性别 0女 1男
      */
@@ -53,69 +50,69 @@ public class User extends Model<User> {
      * 用户状态 0正常 1锁定
      */
     private Integer status;
-    @TableField("is_authorize")
-    private Long isAuthorize;
+    private Long is_authorize;
     /**
      * 职务Id
      */
-    @TableField("position_id")
-    private Integer positionId;
+    private Integer position_id;
     /**
      * 标签列表
      */
-    @TableField("tag_list")
-    private String tagList;
+    private String tag_list;
     /**
      * 好评率
      */
-    @TableField("praise_average")
-    private String praiseAverage;
-    @TableField("create_time")
-    private Long createTime;
-    @TableField("update_time")
-    private Long updateTime;
-    @TableField("is_del")
-    private Integer isDel;
+    private String praise_average;
+    private Long create_time;
+    private Long update_time;
+    private Integer is_del;
+    /**
+     * 密码
+     */
+    private String password;
+
+    @TableField(exist = false)
+    private List<Role> roleList;
 
 
-    public Long getUserId() {
-        return userId;
+    public Long getUser_id() {
+        return user_id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
 
-    public String getOpenId() {
-        return openId;
+    public String getOpen_id() {
+        return open_id;
     }
 
-    public void setOpenId(String openId) {
-        this.openId = openId;
+    public void setOpen_id(String open_id) {
+        this.open_id = open_id;
     }
 
-    public String getUserPhone() {
-        return userPhone;
+    public String getUser_phone() {
+        return user_phone;
     }
 
-    public void setUserPhone(String userPhone) {
-        this.userPhone = userPhone;
+    public void setUser_phone(String user_phone) {
+        this.user_phone = user_phone;
     }
 
-    public Integer getRoleId() {
-        return roleId;
+    public Integer getRole_id() {
+        return role_id;
     }
 
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
+    public void setRole_id(Integer role_id) {
+        this.role_id = role_id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUser_name() {
+        return user_name;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUser_name(String user_name) {
+        this.user_name = user_name;
     }
 
     public Integer getSex() {
@@ -134,84 +131,101 @@ public class User extends Model<User> {
         this.status = status;
     }
 
-    public Long getIsAuthorize() {
-        return isAuthorize;
+    public Long getIs_authorize() {
+        return is_authorize;
     }
 
-    public void setIsAuthorize(Long isAuthorize) {
-        this.isAuthorize = isAuthorize;
+    public void setIs_authorize(Long is_authorize) {
+        this.is_authorize = is_authorize;
     }
 
-    public Integer getPositionId() {
-        return positionId;
+    public Integer getPosition_id() {
+        return position_id;
     }
 
-    public void setPositionId(Integer positionId) {
-        this.positionId = positionId;
+    public void setPosition_id(Integer position_id) {
+        this.position_id = position_id;
     }
 
-    public String getTagList() {
-        return tagList;
+    public String getTag_list() {
+        return tag_list;
     }
 
-    public void setTagList(String tagList) {
-        this.tagList = tagList;
+    public void setTag_list(String tag_list) {
+        this.tag_list = tag_list;
     }
 
-    public String getPraiseAverage() {
-        return praiseAverage;
+    public String getPraise_average() {
+        return praise_average;
     }
 
-    public void setPraiseAverage(String praiseAverage) {
-        this.praiseAverage = praiseAverage;
+    public void setPraise_average(String praise_average) {
+        this.praise_average = praise_average;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public Long getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Long create_time) {
+        this.create_time = create_time;
     }
 
-    public Long getUpdateTime() {
-        return updateTime;
+    public Long getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdate_time(Long update_time) {
+        this.update_time = update_time;
     }
 
-    public Integer getIsDel() {
-        return isDel;
+    public Integer getIs_del() {
+        return is_del;
     }
 
-    public void setIsDel(Integer isDel) {
-        this.isDel = isDel;
+    public void setIs_del(Integer is_del) {
+        this.is_del = is_del;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public List<Role> getRoleList() {
+        return roleList;
+    }
+
+    public void setRoleList(List<Role> roleList) {
+        this.roleList = roleList;
     }
 
     @Override
     protected Serializable pkVal() {
-        return this.userId;
+        return this.user_id;
     }
 
     @Override
     public String toString() {
         return "User{" +
-        "userId=" + userId +
-        ", openId=" + openId +
-        ", userPhone=" + userPhone +
-        ", roleId=" + roleId +
-        ", userName=" + userName +
+        "user_id=" + user_id +
+        ", open_id=" + open_id +
+        ", user_phone=" + user_phone +
+        ", role_id=" + role_id +
+        ", user_name=" + user_name +
         ", sex=" + sex +
         ", status=" + status +
-        ", isAuthorize=" + isAuthorize +
-        ", positionId=" + positionId +
-        ", tagList=" + tagList +
-        ", praiseAverage=" + praiseAverage +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", isDel=" + isDel +
+        ", is_authorize=" + is_authorize +
+        ", position_id=" + position_id +
+        ", tag_list=" + tag_list +
+        ", praise_average=" + praise_average +
+        ", create_time=" + create_time +
+        ", update_time=" + update_time +
+        ", is_del=" + is_del +
+        ", password=" + password +
         "}";
     }
 }

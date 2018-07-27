@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
  * 工作人员标签表 服务实现类
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
 @Service
 public class UserTagServiceImpl extends BaseServiceImpl<UserTagMapper, UserTag> implements IUserTagService {

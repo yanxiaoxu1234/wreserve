@@ -1,15 +1,15 @@
 package com.zy.wreserve.wechat.service;
 
-import com.zy.wreserve.wechat.entity.ReservationProject;
 import com.baomidou.mybatisplus.service.IService;
+import com.zy.wreserve.wechat.entity.ReservationProject;
 
 /**
  * <p>
  * 服务项目表 服务类
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
 public interface IReservationProjectService extends IService<ReservationProject> {
 

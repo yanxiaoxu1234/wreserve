@@ -14,7 +14,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.0.3.RELEASE</version>
+        <version>1.5.1.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -25,6 +25,8 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <shiro.version>1.4.0</shiro.version>
+        <kisso.version>3.7.0</kisso.version>
+        <mybatis-plus.version>2.1.8</mybatis-plus.version>
     </properties>
 
     <dependencies>
@@ -67,20 +69,19 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
-        <!--solr搜索插件-->
+        <!--solr搜索插件(暂时注释掉)-->
+        <!--<dependency>-->
+            <!--<groupId>org.apache.solr</groupId>-->
+            <!--<artifactId>solr-solrj</artifactId>-->
+            <!--<version>7.2.1</version>-->
+        <!--</dependency>-->
+    <!--shiro相关-->
         <dependency>
-            <groupId>org.apache.solr</groupId>
-            <artifactId>solr-solrj</artifactId>
-            <version>7.2.1</version>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.3.2</version>
         </dependency>
 
-
-        <!-- Kisso相关 -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>kisso</artifactId>
-            <version>3.7.0</version>
-        </dependency>
         <!--fastJson-->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -92,22 +93,38 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.baomidou</groupId>-->
+            <!--<artifactId>mybatisplus-spring-boot-starter</artifactId>-->
+            <!--<version>1.0.5</version>-->
+        <!--</dependency>-->
+        <!-- Kisso相关 -->
         <dependency>
             <groupId>com.baomidou</groupId>
-            <artifactId>mybatisplus-spring-boot-starter</artifactId>
-            <version>1.0.5</version>
+            <artifactId>kisso</artifactId>
+            <version>${kisso.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.baomidou/mybatis-plus-boot-starter -->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus</artifactId>
-            <version>2.1.8</version>
+            <version>${mybatis-plus.version}</version>
         </dependency>
-      <!--velocity -->
+
+        <!--velocity -->
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity</artifactId>
             <version>1.7</version>
         </dependency>
+
+
     </dependencies>
 
     <build>

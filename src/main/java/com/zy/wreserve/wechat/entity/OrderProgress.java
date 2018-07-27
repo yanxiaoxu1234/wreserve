@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
 
 /**
@@ -14,112 +12,104 @@ import java.io.Serializable;
  * 订单状态记录表
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
-@TableName("order_progress")
 public class OrderProgress extends Model<OrderProgress> {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "order_progress_id", type = IdType.AUTO)
-    private Long orderProgressId;
-    @TableField("order_id")
-    private Long orderId;
-    @TableField("order_status")
-    private Integer orderStatus;
-    @TableField("pay_status")
-    private Integer payStatus;
-    @TableField("operation_user_id")
-    private Long operationUserId;
-    @TableField("create_time")
-    private Long createTime;
-    @TableField("update_time")
-    private Long updateTime;
-    @TableField("is_del")
-    private Long isDel;
+    private Long order_progress_id;
+    private Long order_id;
+    private Integer order_status;
+    private Integer pay_status;
+    private Long operation_user_id;
+    private Long create_time;
+    private Long update_time;
+    private Long is_del;
 
 
-    public Long getOrderProgressId() {
-        return orderProgressId;
+    public Long getOrder_progress_id() {
+        return order_progress_id;
     }
 
-    public void setOrderProgressId(Long orderProgressId) {
-        this.orderProgressId = orderProgressId;
+    public void setOrder_progress_id(Long order_progress_id) {
+        this.order_progress_id = order_progress_id;
     }
 
-    public Long getOrderId() {
-        return orderId;
+    public Long getOrder_id() {
+        return order_id;
     }
 
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
+    public void setOrder_id(Long order_id) {
+        this.order_id = order_id;
     }
 
-    public Integer getOrderStatus() {
-        return orderStatus;
+    public Integer getOrder_status() {
+        return order_status;
     }
 
-    public void setOrderStatus(Integer orderStatus) {
-        this.orderStatus = orderStatus;
+    public void setOrder_status(Integer order_status) {
+        this.order_status = order_status;
     }
 
-    public Integer getPayStatus() {
-        return payStatus;
+    public Integer getPay_status() {
+        return pay_status;
     }
 
-    public void setPayStatus(Integer payStatus) {
-        this.payStatus = payStatus;
+    public void setPay_status(Integer pay_status) {
+        this.pay_status = pay_status;
     }
 
-    public Long getOperationUserId() {
-        return operationUserId;
+    public Long getOperation_user_id() {
+        return operation_user_id;
     }
 
-    public void setOperationUserId(Long operationUserId) {
-        this.operationUserId = operationUserId;
+    public void setOperation_user_id(Long operation_user_id) {
+        this.operation_user_id = operation_user_id;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public Long getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Long create_time) {
+        this.create_time = create_time;
     }
 
-    public Long getUpdateTime() {
-        return updateTime;
+    public Long getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdate_time(Long update_time) {
+        this.update_time = update_time;
     }
 
-    public Long getIsDel() {
-        return isDel;
+    public Long getIs_del() {
+        return is_del;
     }
 
-    public void setIsDel(Long isDel) {
-        this.isDel = isDel;
+    public void setIs_del(Long is_del) {
+        this.is_del = is_del;
     }
 
     @Override
     protected Serializable pkVal() {
-        return this.orderProgressId;
+        return this.order_progress_id;
     }
 
     @Override
     public String toString() {
-        return "OrderProgress{" +
-        "orderProgressId=" + orderProgressId +
-        ", orderId=" + orderId +
-        ", orderStatus=" + orderStatus +
-        ", payStatus=" + payStatus +
-        ", operationUserId=" + operationUserId +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", isDel=" + isDel +
+        return "Order_progress{" +
+        "order_progress_id=" + order_progress_id +
+        ", order_id=" + order_id +
+        ", order_status=" + order_status +
+        ", pay_status=" + pay_status +
+        ", operation_user_id=" + operation_user_id +
+        ", create_time=" + create_time +
+        ", update_time=" + update_time +
+        ", is_del=" + is_del +
         "}";
     }
 }

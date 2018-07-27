@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
 
@@ -13,78 +12,74 @@ import java.io.Serializable;
  * 职务表
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
 public class Position extends Model<Position> {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "position_id", type = IdType.AUTO)
-    private Long positionId;
-    @TableField("position_name")
-    private String positionName;
-    @TableField("create_time")
-    private Long createTime;
-    @TableField("update_time")
-    private Long updateTime;
-    @TableField("is_del")
-    private Integer isDel;
+    private Long position_id;
+    private String position_name;
+    private Long create_time;
+    private Long update_time;
+    private Integer is_del;
 
 
-    public Long getPositionId() {
-        return positionId;
+    public Long getPosition_id() {
+        return position_id;
     }
 
-    public void setPositionId(Long positionId) {
-        this.positionId = positionId;
+    public void setPosition_id(Long position_id) {
+        this.position_id = position_id;
     }
 
-    public String getPositionName() {
-        return positionName;
+    public String getPosition_name() {
+        return position_name;
     }
 
-    public void setPositionName(String positionName) {
-        this.positionName = positionName;
+    public void setPosition_name(String position_name) {
+        this.position_name = position_name;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public Long getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Long create_time) {
+        this.create_time = create_time;
     }
 
-    public Long getUpdateTime() {
-        return updateTime;
+    public Long getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdate_time(Long update_time) {
+        this.update_time = update_time;
     }
 
-    public Integer getIsDel() {
-        return isDel;
+    public Integer getIs_del() {
+        return is_del;
     }
 
-    public void setIsDel(Integer isDel) {
-        this.isDel = isDel;
+    public void setIs_del(Integer is_del) {
+        this.is_del = is_del;
     }
 
     @Override
     protected Serializable pkVal() {
-        return this.positionId;
+        return this.position_id;
     }
 
     @Override
     public String toString() {
         return "Position{" +
-        "positionId=" + positionId +
-        ", positionName=" + positionName +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", isDel=" + isDel +
+        "position_id=" + position_id +
+        ", position_name=" + position_name +
+        ", create_time=" + create_time +
+        ", update_time=" + update_time +
+        ", is_del=" + is_del +
         "}";
     }
 }

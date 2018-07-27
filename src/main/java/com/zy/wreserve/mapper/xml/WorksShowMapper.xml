@@ -4,8 +4,8 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.WorksShow">
-        <id column="works_show_id" property="worksShowId" />
-        <result column="user_id" property="userId" />
+        <id column="works_show_id" property="works_show_id" />
+        <result column="user_id" property="user_id" />
         <result column="pic1" property="pic1" />
         <result column="pic2" property="pic2" />
         <result column="pic3" property="pic3" />
@@ -14,10 +14,10 @@
         <result column="pic6" property="pic6" />
         <result column="remark" property="remark" />
         <result column="price" property="price" />
-        <result column="like_number" property="likeNumber" />
-        <result column="create_time" property="createTime" />
-        <result column="update_time" property="updateTime" />
-        <result column="is_del" property="isDel" />
+        <result column="like_number" property="like_number" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+        <result column="is_del" property="is_del" />
     </resultMap>
 
 </mapper>

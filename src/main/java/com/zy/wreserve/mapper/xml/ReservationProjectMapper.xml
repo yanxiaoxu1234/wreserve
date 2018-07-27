@@ -4,8 +4,8 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.ReservationProject">
-        <id column="reservation_project_id" property="reservationProjectId" />
-        <result column="reservation_project_name" property="reservationProjectName" />
+        <id column="reservation_project_id" property="reservation_project_id" />
+        <result column="reservation_project_name" property="reservation_project_name" />
         <result column="sort" property="sort" />
     </resultMap>
 

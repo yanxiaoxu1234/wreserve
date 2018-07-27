@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
 
 /**
@@ -14,32 +12,23 @@ import java.io.Serializable;
  * 预约记录表
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
-@TableName("reservation_record")
 public class ReservationRecord extends Model<ReservationRecord> {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "reservation_record_id", type = IdType.AUTO)
-    private Long reservationRecordId;
-    @TableField("user_id")
-    private Long userId;
-    @TableField("service_user_id")
-    private Long serviceUserId;
-    @TableField("service_user_name")
-    private String serviceUserName;
-    @TableField("reservation_time")
-    private Long reservationTime;
-    @TableField("reservation_project")
-    private Integer reservationProject;
-    @TableField("reservation_project_name")
-    private String reservationProjectName;
-    @TableField("reservation_number")
-    private Integer reservationNumber;
-    @TableField("reservation_remark")
-    private String reservationRemark;
+    private Long reservation_record_id;
+    private Long user_id;
+    private Long service_user_id;
+    private String service_user_name;
+    private Long reservation_time;
+    private Integer reservation_project;
+    private String reservation_project_name;
+    private Integer reservation_number;
+    private String reservation_remark;
     /**
      * 预约状态 -1已取消 0已预约 1已完成
      */
@@ -48,84 +37,81 @@ public class ReservationRecord extends Model<ReservationRecord> {
      * 通知
      */
     private String advice;
-    @TableField("create_time")
-    private Long createTime;
-    @TableField("update_time")
-    private Long updateTime;
-    @TableField("is_del")
-    private Integer isDel;
+    private Long create_time;
+    private Long update_time;
+    private Integer is_del;
 
 
-    public Long getReservationRecordId() {
-        return reservationRecordId;
+    public Long getReservation_record_id() {
+        return reservation_record_id;
     }
 
-    public void setReservationRecordId(Long reservationRecordId) {
-        this.reservationRecordId = reservationRecordId;
+    public void setReservation_record_id(Long reservation_record_id) {
+        this.reservation_record_id = reservation_record_id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getUser_id() {
+        return user_id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
 
-    public Long getServiceUserId() {
-        return serviceUserId;
+    public Long getService_user_id() {
+        return service_user_id;
     }
 
-    public void setServiceUserId(Long serviceUserId) {
-        this.serviceUserId = serviceUserId;
+    public void setService_user_id(Long service_user_id) {
+        this.service_user_id = service_user_id;
     }
 
-    public String getServiceUserName() {
-        return serviceUserName;
+    public String getService_user_name() {
+        return service_user_name;
     }
 
-    public void setServiceUserName(String serviceUserName) {
-        this.serviceUserName = serviceUserName;
+    public void setService_user_name(String service_user_name) {
+        this.service_user_name = service_user_name;
     }
 
-    public Long getReservationTime() {
-        return reservationTime;
+    public Long getReservation_time() {
+        return reservation_time;
     }
 
-    public void setReservationTime(Long reservationTime) {
-        this.reservationTime = reservationTime;
+    public void setReservation_time(Long reservation_time) {
+        this.reservation_time = reservation_time;
     }
 
-    public Integer getReservationProject() {
-        return reservationProject;
+    public Integer getReservation_project() {
+        return reservation_project;
     }
 
-    public void setReservationProject(Integer reservationProject) {
-        this.reservationProject = reservationProject;
+    public void setReservation_project(Integer reservation_project) {
+        this.reservation_project = reservation_project;
     }
 
-    public String getReservationProjectName() {
-        return reservationProjectName;
+    public String getReservation_project_name() {
+        return reservation_project_name;
     }
 
-    public void setReservationProjectName(String reservationProjectName) {
-        this.reservationProjectName = reservationProjectName;
+    public void setReservation_project_name(String reservation_project_name) {
+        this.reservation_project_name = reservation_project_name;
     }
 
-    public Integer getReservationNumber() {
-        return reservationNumber;
+    public Integer getReservation_number() {
+        return reservation_number;
     }
 
-    public void setReservationNumber(Integer reservationNumber) {
-        this.reservationNumber = reservationNumber;
+    public void setReservation_number(Integer reservation_number) {
+        this.reservation_number = reservation_number;
     }
 
-    public String getReservationRemark() {
-        return reservationRemark;
+    public String getReservation_remark() {
+        return reservation_remark;
     }
 
-    public void setReservationRemark(String reservationRemark) {
-        this.reservationRemark = reservationRemark;
+    public void setReservation_remark(String reservation_remark) {
+        this.reservation_remark = reservation_remark;
     }
 
     public Integer getStatus() {
@@ -144,52 +130,52 @@ public class ReservationRecord extends Model<ReservationRecord> {
         this.advice = advice;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public Long getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Long create_time) {
+        this.create_time = create_time;
     }
 
-    public Long getUpdateTime() {
-        return updateTime;
+    public Long getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdate_time(Long update_time) {
+        this.update_time = update_time;
     }
 
-    public Integer getIsDel() {
-        return isDel;
+    public Integer getIs_del() {
+        return is_del;
     }
 
-    public void setIsDel(Integer isDel) {
-        this.isDel = isDel;
+    public void setIs_del(Integer is_del) {
+        this.is_del = is_del;
     }
 
     @Override
     protected Serializable pkVal() {
-        return this.reservationRecordId;
+        return this.reservation_record_id;
     }
 
     @Override
     public String toString() {
-        return "ReservationRecord{" +
-        "reservationRecordId=" + reservationRecordId +
-        ", userId=" + userId +
-        ", serviceUserId=" + serviceUserId +
-        ", serviceUserName=" + serviceUserName +
-        ", reservationTime=" + reservationTime +
-        ", reservationProject=" + reservationProject +
-        ", reservationProjectName=" + reservationProjectName +
-        ", reservationNumber=" + reservationNumber +
-        ", reservationRemark=" + reservationRemark +
+        return "Reservation_record{" +
+        "reservation_record_id=" + reservation_record_id +
+        ", user_id=" + user_id +
+        ", service_user_id=" + service_user_id +
+        ", service_user_name=" + service_user_name +
+        ", reservation_time=" + reservation_time +
+        ", reservation_project=" + reservation_project +
+        ", reservation_project_name=" + reservation_project_name +
+        ", reservation_number=" + reservation_number +
+        ", reservation_remark=" + reservation_remark +
         ", status=" + status +
         ", advice=" + advice +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", isDel=" + isDel +
+        ", create_time=" + create_time +
+        ", update_time=" + update_time +
+        ", is_del=" + is_del +
         "}";
     }
 }

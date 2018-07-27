@@ -4,13 +4,13 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.Integral">
-        <id column="integral_id" property="integralId" />
-        <result column="user_id" property="userId" />
-        <result column="online_integral" property="onlineIntegral" />
-        <result column="offline_integral" property="offlineIntegral" />
-        <result column="create_time" property="createTime" />
-        <result column="update_time" property="updateTime" />
-        <result column="is_del" property="isDel" />
+        <id column="integral_id" property="integral_id" />
+        <result column="user_id" property="user_id" />
+        <result column="online_integral" property="online_integral" />
+        <result column="offline_integral" property="offline_integral" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+        <result column="is_del" property="is_del" />
     </resultMap>
 
 </mapper>

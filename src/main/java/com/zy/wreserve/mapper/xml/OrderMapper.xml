@@ -4,26 +4,26 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.Order">
-        <id column="order_id" property="orderId" />
-        <result column="user_id" property="userId" />
-        <result column="order_sn" property="orderSn" />
-        <result column="desk_status" property="deskStatus" />
+        <id column="order_id" property="order_id" />
+        <result column="user_id" property="user_id" />
+        <result column="order_sn" property="order_sn" />
+        <result column="desk_status" property="desk_status" />
         <result column="status" property="status" />
-        <result column="pay_status" property="payStatus" />
-        <result column="pay_type" property="payType" />
-        <result column="product_price" property="productPrice" />
-        <result column="delivery_price" property="deliveryPrice" />
-        <result column="tootal_price" property="tootalPrice" />
-        <result column="address_detail" property="addressDetail" />
+        <result column="pay_status" property="pay_status" />
+        <result column="pay_type" property="pay_type" />
+        <result column="product_price" property="product_price" />
+        <result column="delivery_price" property="delivery_price" />
+        <result column="tootal_price" property="tootal_price" />
+        <result column="address_detail" property="address_detail" />
         <result column="province" property="province" />
         <result column="city" property="city" />
-        <result column="add_conn_name" property="addConnName" />
-        <result column="add_conn_phone" property="addConnPhone" />
-        <result column="add_conn_sex" property="addConnSex" />
-        <result column="order_remark" property="orderRemark" />
-        <result column="create_time" property="createTime" />
-        <result column="update_time" property="updateTime" />
-        <result column="is_del" property="isDel" />
+        <result column="add_conn_name" property="add_conn_name" />
+        <result column="add_conn_phone" property="add_conn_phone" />
+        <result column="add_conn_sex" property="add_conn_sex" />
+        <result column="order_remark" property="order_remark" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+        <result column="is_del" property="is_del" />
     </resultMap>
 
 </mapper>

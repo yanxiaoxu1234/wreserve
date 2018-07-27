@@ -4,12 +4,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.baomidou.kisso.SSOHelper;
+import com.baomidou.kisso.security.token.SSOToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.baomidou.kisso.security.token.SSOToken;
 
 /**
  * <p>

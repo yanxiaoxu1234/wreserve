@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
@@ -14,8 +13,8 @@ import java.io.Serializable;
  * 职务-项目关系表
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
 @TableName("position_project_realtion")
 public class PositionProjectRealtion extends Model<PositionProjectRealtion> {
@@ -23,81 +22,76 @@ public class PositionProjectRealtion extends Model<PositionProjectRealtion> {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "position_project_realtion_id", type = IdType.AUTO)
-    private Long positionProjectRealtionId;
-    @TableField("position_id")
-    private Long positionId;
-    @TableField("project_id")
-    private Long projectId;
-    @TableField("create_time")
-    private Long createTime;
-    @TableField("update_time")
-    private Long updateTime;
-    @TableField("is_del")
-    private Integer isDel;
+    private Long position_project_realtion_id;
+    private Long position_id;
+    private Long project_id;
+    private Long create_time;
+    private Long update_time;
+    private Integer is_del;
 
 
-    public Long getPositionProjectRealtionId() {
-        return positionProjectRealtionId;
+    public Long getPosition_project_realtion_id() {
+        return position_project_realtion_id;
     }
 
-    public void setPositionProjectRealtionId(Long positionProjectRealtionId) {
-        this.positionProjectRealtionId = positionProjectRealtionId;
+    public void setPosition_project_realtion_id(Long position_project_realtion_id) {
+        this.position_project_realtion_id = position_project_realtion_id;
     }
 
-    public Long getPositionId() {
-        return positionId;
+    public Long getPosition_id() {
+        return position_id;
     }
 
-    public void setPositionId(Long positionId) {
-        this.positionId = positionId;
+    public void setPosition_id(Long position_id) {
+        this.position_id = position_id;
     }
 
-    public Long getProjectId() {
-        return projectId;
+    public Long getProject_id() {
+        return project_id;
     }
 
-    public void setProjectId(Long projectId) {
-        this.projectId = projectId;
+    public void setProject_id(Long project_id) {
+        this.project_id = project_id;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public Long getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Long create_time) {
+        this.create_time = create_time;
     }
 
-    public Long getUpdateTime() {
-        return updateTime;
+    public Long getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdate_time(Long update_time) {
+        this.update_time = update_time;
     }
 
-    public Integer getIsDel() {
-        return isDel;
+    public Integer getIs_del() {
+        return is_del;
     }
 
-    public void setIsDel(Integer isDel) {
-        this.isDel = isDel;
+    public void setIs_del(Integer is_del) {
+        this.is_del = is_del;
     }
 
     @Override
     protected Serializable pkVal() {
-        return this.positionProjectRealtionId;
+        return this.position_project_realtion_id;
     }
 
     @Override
     public String toString() {
-        return "PositionProjectRealtion{" +
-        "positionProjectRealtionId=" + positionProjectRealtionId +
-        ", positionId=" + positionId +
-        ", projectId=" + projectId +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", isDel=" + isDel +
+        return "Position_project_realtion{" +
+        "position_project_realtion_id=" + position_project_realtion_id +
+        ", position_id=" + position_id +
+        ", project_id=" + project_id +
+        ", create_time=" + create_time +
+        ", update_time=" + update_time +
+        ", is_del=" + is_del +
         "}";
     }
 }

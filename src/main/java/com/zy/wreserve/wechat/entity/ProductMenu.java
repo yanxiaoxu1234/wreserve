@@ -4,7 +4,6 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
@@ -14,8 +13,8 @@ import java.io.Serializable;
  * 商品菜单表
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
 @TableName("product_menu")
 public class ProductMenu extends Model<ProductMenu> {
@@ -23,32 +22,28 @@ public class ProductMenu extends Model<ProductMenu> {
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "product_menu_id", type = IdType.AUTO)
-    private Long productMenuId;
-    @TableField("product_menu_name")
-    private String productMenuName;
+    private Long product_menu_id;
+    private String product_menu_name;
     private Integer sort;
-    @TableField("create_time")
-    private Long createTime;
-    @TableField("update_time")
-    private Long updateTime;
-    @TableField("is_del")
-    private Integer isDel;
+    private Long create_time;
+    private Long update_time;
+    private Integer is_del;
 
 
-    public Long getProductMenuId() {
-        return productMenuId;
+    public Long getProduct_menu_id() {
+        return product_menu_id;
     }
 
-    public void setProductMenuId(Long productMenuId) {
-        this.productMenuId = productMenuId;
+    public void setProduct_menu_id(Long product_menu_id) {
+        this.product_menu_id = product_menu_id;
     }
 
-    public String getProductMenuName() {
-        return productMenuName;
+    public String getProduct_menu_name() {
+        return product_menu_name;
     }
 
-    public void setProductMenuName(String productMenuName) {
-        this.productMenuName = productMenuName;
+    public void setProduct_menu_name(String product_menu_name) {
+        this.product_menu_name = product_menu_name;
     }
 
     public Integer getSort() {
@@ -59,44 +54,44 @@ public class ProductMenu extends Model<ProductMenu> {
         this.sort = sort;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public Long getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Long create_time) {
+        this.create_time = create_time;
     }
 
-    public Long getUpdateTime() {
-        return updateTime;
+    public Long getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdate_time(Long update_time) {
+        this.update_time = update_time;
     }
 
-    public Integer getIsDel() {
-        return isDel;
+    public Integer getIs_del() {
+        return is_del;
     }
 
-    public void setIsDel(Integer isDel) {
-        this.isDel = isDel;
+    public void setIs_del(Integer is_del) {
+        this.is_del = is_del;
     }
 
     @Override
     protected Serializable pkVal() {
-        return this.productMenuId;
+        return this.product_menu_id;
     }
 
     @Override
     public String toString() {
-        return "ProductMenu{" +
-        "productMenuId=" + productMenuId +
-        ", productMenuName=" + productMenuName +
+        return "Product_menu{" +
+        "product_menu_id=" + product_menu_id +
+        ", product_menu_name=" + product_menu_name +
         ", sort=" + sort +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", isDel=" + isDel +
+        ", create_time=" + create_time +
+        ", update_time=" + update_time +
+        ", is_del=" + is_del +
         "}";
     }
 }

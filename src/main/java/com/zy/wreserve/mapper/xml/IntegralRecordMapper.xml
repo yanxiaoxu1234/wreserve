@@ -4,16 +4,16 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.IntegralRecord">
-        <id column="integral_record_id" property="integralRecordId" />
-        <result column="integral_record_type" property="integralRecordType" />
-        <result column="change_type" property="changeType" />
-        <result column="integral_number" property="integralNumber" />
-        <result column="order_id" property="orderId" />
-        <result column="change_reason" property="changeReason" />
-        <result column="change_record_type" property="changeRecordType" />
-        <result column="create_time" property="createTime" />
-        <result column="update_time" property="updateTime" />
-        <result column="is_del" property="isDel" />
+        <id column="integral_record_id" property="integral_record_id" />
+        <result column="integral_record_type" property="integral_record_type" />
+        <result column="change_type" property="change_type" />
+        <result column="integral_number" property="integral_number" />
+        <result column="order_id" property="order_id" />
+        <result column="change_reason" property="change_reason" />
+        <result column="change_record_type" property="change_record_type" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+        <result column="is_del" property="is_del" />
     </resultMap>
 
 </mapper>

@@ -1,9 +1,10 @@
 package com.zy.wreserve.wechat.service.impl;
 
+
+import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import com.zy.wreserve.wechat.entity.MemberCard;
 import com.zy.wreserve.mapper.MemberCardMapper;
 import com.zy.wreserve.wechat.service.IMemberCardService;
-import com.zy.wreserve.wechat.service.support.BaseServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
@@ -11,10 +12,10 @@ import org.springframework.stereotype.Service;
  * 会员卡表 服务实现类
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
 @Service
-public class MemberCardServiceImpl extends BaseServiceImpl<MemberCardMapper, MemberCard> implements IMemberCardService {
+public class MemberCardServiceImpl extends ServiceImpl<MemberCardMapper, MemberCard> implements IMemberCardService {
 
 }

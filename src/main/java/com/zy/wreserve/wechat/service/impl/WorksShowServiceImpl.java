@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
  * 作品展示集 服务实现类
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
 @Service
 public class WorksShowServiceImpl extends BaseServiceImpl<WorksShowMapper, WorksShow> implements IWorksShowService {

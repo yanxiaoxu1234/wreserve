@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
  * 职务-项目关系表 服务实现类
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
 @Service
 public class PositionProjectRealtionServiceImpl extends BaseServiceImpl<PositionProjectRealtionMapper, PositionProjectRealtion> implements IPositionProjectRealtionService {

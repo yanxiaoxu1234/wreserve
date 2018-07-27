@@ -2,9 +2,7 @@ package com.zy.wreserve.wechat.entity;
 
 import java.io.Serializable;
 
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
 
 /**
@@ -12,10 +10,9 @@ import java.io.Serializable;
  * 用户微信信息表
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
-@TableName("user_wechat")
 public class UserWechat extends Model<UserWechat> {
 
     private static final long serialVersionUID = 1L;
@@ -41,12 +38,9 @@ public class UserWechat extends Model<UserWechat> {
     /**
      * 是否删除 0否 1是
      */
-    @TableField("is_del")
-    private Integer isDel;
-    @TableField("create_time")
-    private Long createTime;
-    @TableField("update_time")
-    private Long updateTime;
+    private Integer is_del;
+    private Long create_time;
+    private Long update_time;
 
 
     public String getOpenId() {
@@ -169,28 +163,28 @@ public class UserWechat extends Model<UserWechat> {
         this.tagIds = tagIds;
     }
 
-    public Integer getIsDel() {
-        return isDel;
+    public Integer getIs_del() {
+        return is_del;
     }
 
-    public void setIsDel(Integer isDel) {
-        this.isDel = isDel;
+    public void setIs_del(Integer is_del) {
+        this.is_del = is_del;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public Long getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Long create_time) {
+        this.create_time = create_time;
     }
 
-    public Long getUpdateTime() {
-        return updateTime;
+    public Long getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdate_time(Long update_time) {
+        this.update_time = update_time;
     }
 
     @Override
@@ -200,7 +194,7 @@ public class UserWechat extends Model<UserWechat> {
 
     @Override
     public String toString() {
-        return "UserWechat{" +
+        return "User_wechat{" +
         "openId=" + openId +
         ", subscribe=" + subscribe +
         ", nickname=" + nickname +
@@ -216,9 +210,9 @@ public class UserWechat extends Model<UserWechat> {
         ", remark=" + remark +
         ", groupId=" + groupId +
         ", tagIds=" + tagIds +
-        ", isDel=" + isDel +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
+        ", is_del=" + is_del +
+        ", create_time=" + create_time +
+        ", update_time=" + update_time +
         "}";
     }
 }

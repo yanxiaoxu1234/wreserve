@@ -2,9 +2,6 @@ package com.zy.wreserve.wechat.entity;
 
 import java.io.Serializable;
 
-import com.baomidou.mybatisplus.enums.IdType;
-import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import java.io.Serializable;
 
@@ -13,24 +10,20 @@ import java.io.Serializable;
  * 订单表
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
 public class Order extends Model<Order> {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "order_id", type = IdType.AUTO)
-    private Long orderId;
-    @TableField("user_id")
-    private Long userId;
-    @TableField("order_sn")
-    private String orderSn;
+    private Long order_id;
+    private Long user_id;
+    private String order_sn;
     /**
      * 状态 0 待处理  1已完成
      */
-    @TableField("desk_status")
-    private Integer deskStatus;
+    private Integer desk_status;
     /**
      * -1 已取消 0待接单 1已接单 2已发货 3已完成
      */
@@ -38,72 +31,59 @@ public class Order extends Model<Order> {
     /**
      * 支付状态 0未支付 1已支付
      */
-    @TableField("pay_status")
-    private Integer payStatus;
+    private Integer pay_status;
     /**
      * 支付方式 1微信 2其他
      */
-    @TableField("pay_type")
-    private Integer payType;
-    @TableField("product_price")
-    private Integer productPrice;
-    @TableField("delivery_price")
-    private Integer deliveryPrice;
-    @TableField("tootal_price")
-    private Integer tootalPrice;
-    @TableField("address_detail")
-    private String addressDetail;
+    private Integer pay_type;
+    private Integer product_price;
+    private Integer delivery_price;
+    private Integer tootal_price;
+    private String address_detail;
     private String province;
     private String city;
-    @TableField("add_conn_name")
-    private String addConnName;
-    @TableField("add_conn_phone")
-    private String addConnPhone;
+    private String add_conn_name;
+    private String add_conn_phone;
     /**
      * 性别 0女 1男
      */
-    @TableField("add_conn_sex")
-    private Integer addConnSex;
-    @TableField("order_remark")
-    private String orderRemark;
-    @TableField("create_time")
-    private Long createTime;
-    @TableField("update_time")
-    private Long updateTime;
-    @TableField("is_del")
-    private Integer isDel;
+    private Integer add_conn_sex;
+    private String order_remark;
+    private Long create_time;
+    private Long update_time;
+    private Integer is_del;
 
 
-    public Long getOrderId() {
-        return orderId;
+    public Long getOrder_id() {
+        return order_id;
     }
 
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
+    public void setOrder_id(Long order_id) {
+        this.order_id = order_id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getUser_id() {
+        return user_id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
 
-    public String getOrderSn() {
-        return orderSn;
+    public String getOrder_sn() {
+        return order_sn;
     }
 
-    public void setOrderSn(String orderSn) {
-        this.orderSn = orderSn;
+    public void setOrder_sn(String order_sn) {
+        this.order_sn = order_sn;
     }
 
-    public Integer getDeskStatus() {
-        return deskStatus;
+    public Integer getDesk_status() {
+        return desk_status;
     }
 
-    public void setDeskStatus(Integer deskStatus) {
-        this.deskStatus = deskStatus;
+    public void setDesk_status(Integer desk_status) {
+        this.desk_status = desk_status;
     }
 
     public Integer getStatus() {
@@ -114,52 +94,52 @@ public class Order extends Model<Order> {
         this.status = status;
     }
 
-    public Integer getPayStatus() {
-        return payStatus;
+    public Integer getPay_status() {
+        return pay_status;
     }
 
-    public void setPayStatus(Integer payStatus) {
-        this.payStatus = payStatus;
+    public void setPay_status(Integer pay_status) {
+        this.pay_status = pay_status;
     }
 
-    public Integer getPayType() {
-        return payType;
+    public Integer getPay_type() {
+        return pay_type;
     }
 
-    public void setPayType(Integer payType) {
-        this.payType = payType;
+    public void setPay_type(Integer pay_type) {
+        this.pay_type = pay_type;
     }
 
-    public Integer getProductPrice() {
-        return productPrice;
+    public Integer getProduct_price() {
+        return product_price;
     }
 
-    public void setProductPrice(Integer productPrice) {
-        this.productPrice = productPrice;
+    public void setProduct_price(Integer product_price) {
+        this.product_price = product_price;
     }
 
-    public Integer getDeliveryPrice() {
-        return deliveryPrice;
+    public Integer getDelivery_price() {
+        return delivery_price;
     }
 
-    public void setDeliveryPrice(Integer deliveryPrice) {
-        this.deliveryPrice = deliveryPrice;
+    public void setDelivery_price(Integer delivery_price) {
+        this.delivery_price = delivery_price;
     }
 
-    public Integer getTootalPrice() {
-        return tootalPrice;
+    public Integer getTootal_price() {
+        return tootal_price;
     }
 
-    public void setTootalPrice(Integer tootalPrice) {
-        this.tootalPrice = tootalPrice;
+    public void setTootal_price(Integer tootal_price) {
+        this.tootal_price = tootal_price;
     }
 
-    public String getAddressDetail() {
-        return addressDetail;
+    public String getAddress_detail() {
+        return address_detail;
     }
 
-    public void setAddressDetail(String addressDetail) {
-        this.addressDetail = addressDetail;
+    public void setAddress_detail(String address_detail) {
+        this.address_detail = address_detail;
     }
 
     public String getProvince() {
@@ -178,90 +158,90 @@ public class Order extends Model<Order> {
         this.city = city;
     }
 
-    public String getAddConnName() {
-        return addConnName;
+    public String getAdd_conn_name() {
+        return add_conn_name;
     }
 
-    public void setAddConnName(String addConnName) {
-        this.addConnName = addConnName;
+    public void setAdd_conn_name(String add_conn_name) {
+        this.add_conn_name = add_conn_name;
     }
 
-    public String getAddConnPhone() {
-        return addConnPhone;
+    public String getAdd_conn_phone() {
+        return add_conn_phone;
     }
 
-    public void setAddConnPhone(String addConnPhone) {
-        this.addConnPhone = addConnPhone;
+    public void setAdd_conn_phone(String add_conn_phone) {
+        this.add_conn_phone = add_conn_phone;
     }
 
-    public Integer getAddConnSex() {
-        return addConnSex;
+    public Integer getAdd_conn_sex() {
+        return add_conn_sex;
     }
 
-    public void setAddConnSex(Integer addConnSex) {
-        this.addConnSex = addConnSex;
+    public void setAdd_conn_sex(Integer add_conn_sex) {
+        this.add_conn_sex = add_conn_sex;
     }
 
-    public String getOrderRemark() {
-        return orderRemark;
+    public String getOrder_remark() {
+        return order_remark;
     }
 
-    public void setOrderRemark(String orderRemark) {
-        this.orderRemark = orderRemark;
+    public void setOrder_remark(String order_remark) {
+        this.order_remark = order_remark;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public Long getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Long create_time) {
+        this.create_time = create_time;
     }
 
-    public Long getUpdateTime() {
-        return updateTime;
+    public Long getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdate_time(Long update_time) {
+        this.update_time = update_time;
     }
 
-    public Integer getIsDel() {
-        return isDel;
+    public Integer getIs_del() {
+        return is_del;
     }
 
-    public void setIsDel(Integer isDel) {
-        this.isDel = isDel;
+    public void setIs_del(Integer is_del) {
+        this.is_del = is_del;
     }
 
     @Override
     protected Serializable pkVal() {
-        return this.orderId;
+        return this.order_id;
     }
 
     @Override
     public String toString() {
         return "Order{" +
-        "orderId=" + orderId +
-        ", userId=" + userId +
-        ", orderSn=" + orderSn +
-        ", deskStatus=" + deskStatus +
+        "order_id=" + order_id +
+        ", user_id=" + user_id +
+        ", order_sn=" + order_sn +
+        ", desk_status=" + desk_status +
         ", status=" + status +
-        ", payStatus=" + payStatus +
-        ", payType=" + payType +
-        ", productPrice=" + productPrice +
-        ", deliveryPrice=" + deliveryPrice +
-        ", tootalPrice=" + tootalPrice +
-        ", addressDetail=" + addressDetail +
+        ", pay_status=" + pay_status +
+        ", pay_type=" + pay_type +
+        ", product_price=" + product_price +
+        ", delivery_price=" + delivery_price +
+        ", tootal_price=" + tootal_price +
+        ", address_detail=" + address_detail +
         ", province=" + province +
         ", city=" + city +
-        ", addConnName=" + addConnName +
-        ", addConnPhone=" + addConnPhone +
-        ", addConnSex=" + addConnSex +
-        ", orderRemark=" + orderRemark +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", isDel=" + isDel +
+        ", add_conn_name=" + add_conn_name +
+        ", add_conn_phone=" + add_conn_phone +
+        ", add_conn_sex=" + add_conn_sex +
+        ", order_remark=" + order_remark +
+        ", create_time=" + create_time +
+        ", update_time=" + update_time +
+        ", is_del=" + is_del +
         "}";
     }
 }

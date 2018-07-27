@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
 
 /**
@@ -14,123 +12,114 @@ import java.io.Serializable;
  * 订单详情表
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
-@TableName("order_detail")
 public class OrderDetail extends Model<OrderDetail> {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "order_detail_id", type = IdType.AUTO)
-    private Long orderDetailId;
-    @TableField("order_id")
-    private Long orderId;
-    @TableField("product_id")
-    private Long productId;
-    @TableField("product_name")
-    private String productName;
-    @TableField("product_price")
-    private Integer productPrice;
-    @TableField("product_img")
-    private String productImg;
-    @TableField("create_time")
-    private Long createTime;
-    @TableField("update_time")
-    private Long updateTime;
-    @TableField("is_del")
-    private Integer isDel;
+    private Long order_detail_id;
+    private Long order_id;
+    private Long product_id;
+    private String product_name;
+    private Integer product_price;
+    private String product_img;
+    private Long create_time;
+    private Long update_time;
+    private Integer is_del;
 
 
-    public Long getOrderDetailId() {
-        return orderDetailId;
+    public Long getOrder_detail_id() {
+        return order_detail_id;
     }
 
-    public void setOrderDetailId(Long orderDetailId) {
-        this.orderDetailId = orderDetailId;
+    public void setOrder_detail_id(Long order_detail_id) {
+        this.order_detail_id = order_detail_id;
     }
 
-    public Long getOrderId() {
-        return orderId;
+    public Long getOrder_id() {
+        return order_id;
     }
 
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
+    public void setOrder_id(Long order_id) {
+        this.order_id = order_id;
     }
 
-    public Long getProductId() {
-        return productId;
+    public Long getProduct_id() {
+        return product_id;
     }
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
+    public void setProduct_id(Long product_id) {
+        this.product_id = product_id;
     }
 
-    public String getProductName() {
-        return productName;
+    public String getProduct_name() {
+        return product_name;
     }
 
-    public void setProductName(String productName) {
-        this.productName = productName;
+    public void setProduct_name(String product_name) {
+        this.product_name = product_name;
     }
 
-    public Integer getProductPrice() {
-        return productPrice;
+    public Integer getProduct_price() {
+        return product_price;
     }
 
-    public void setProductPrice(Integer productPrice) {
-        this.productPrice = productPrice;
+    public void setProduct_price(Integer product_price) {
+        this.product_price = product_price;
     }
 
-    public String getProductImg() {
-        return productImg;
+    public String getProduct_img() {
+        return product_img;
     }
 
-    public void setProductImg(String productImg) {
-        this.productImg = productImg;
+    public void setProduct_img(String product_img) {
+        this.product_img = product_img;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public Long getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Long create_time) {
+        this.create_time = create_time;
     }
 
-    public Long getUpdateTime() {
-        return updateTime;
+    public Long getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdate_time(Long update_time) {
+        this.update_time = update_time;
     }
 
-    public Integer getIsDel() {
-        return isDel;
+    public Integer getIs_del() {
+        return is_del;
     }
 
-    public void setIsDel(Integer isDel) {
-        this.isDel = isDel;
+    public void setIs_del(Integer is_del) {
+        this.is_del = is_del;
     }
 
     @Override
     protected Serializable pkVal() {
-        return this.orderDetailId;
+        return this.order_detail_id;
     }
 
     @Override
     public String toString() {
-        return "OrderDetail{" +
-        "orderDetailId=" + orderDetailId +
-        ", orderId=" + orderId +
-        ", productId=" + productId +
-        ", productName=" + productName +
-        ", productPrice=" + productPrice +
-        ", productImg=" + productImg +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", isDel=" + isDel +
+        return "Order_detail{" +
+        "order_detail_id=" + order_detail_id +
+        ", order_id=" + order_id +
+        ", product_id=" + product_id +
+        ", product_name=" + product_name +
+        ", product_price=" + product_price +
+        ", product_img=" + product_img +
+        ", create_time=" + create_time +
+        ", update_time=" + update_time +
+        ", is_del=" + is_del +
         "}";
     }
 }

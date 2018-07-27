@@ -19,9 +19,9 @@
         <result column="remark" property="remark" />
         <result column="groupId" property="groupId" />
         <result column="tagIds" property="tagIds" />
-        <result column="is_del" property="isDel" />
-        <result column="create_time" property="createTime" />
-        <result column="update_time" property="updateTime" />
+        <result column="is_del" property="is_del" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
     </resultMap>
 
 </mapper>

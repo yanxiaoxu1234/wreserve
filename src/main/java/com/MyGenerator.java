@@ -9,7 +9,6 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 
 /**
- * Created by Lucare.Feng on 2017/2/23.
  */
 public class MyGenerator {
 
@@ -61,7 +60,7 @@ public class MyGenerator {
         strategy.setSuperServiceImplClass("com.zy.wreserve.wechat.service.support.BaseServiceImpl");
 //        strategy.setDbColumnUnderline(true);
         // strategy.setInclude(new String[] { "user" }); // 需要生成的表
-        strategy.setExclude(new String[]{"t_user","t_role","t_permission"}); // 排除生成的表
+        strategy.setExclude(new String[]{}); // 排除生成的表
         // 字段名生成策略
 //        strategy.setFieldNaming(NamingStrategy.underline_to_camel);
         // 自定义实体父类

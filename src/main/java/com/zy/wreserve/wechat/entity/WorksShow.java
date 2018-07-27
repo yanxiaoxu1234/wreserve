@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
 
 /**
@@ -14,21 +12,19 @@ import java.io.Serializable;
  * 作品展示集
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
-@TableName("works_show")
 public class WorksShow extends Model<WorksShow> {
 
     private static final long serialVersionUID = 1L;
 
     @TableId(value = "works_show_id", type = IdType.AUTO)
-    private Long worksShowId;
+    private Long works_show_id;
     /**
      * 用户Id
      */
-    @TableField("user_id")
-    private Long userId;
+    private Long user_id;
     /**
      * 作品1
      */
@@ -64,30 +60,26 @@ public class WorksShow extends Model<WorksShow> {
     /**
      * 点赞次数
      */
-    @TableField("like_number")
-    private Integer likeNumber;
-    @TableField("create_time")
-    private Long createTime;
-    @TableField("update_time")
-    private Long updateTime;
-    @TableField("is_del")
-    private Integer isDel;
+    private Integer like_number;
+    private Long create_time;
+    private Long update_time;
+    private Integer is_del;
 
 
-    public Long getWorksShowId() {
-        return worksShowId;
+    public Long getWorks_show_id() {
+        return works_show_id;
     }
 
-    public void setWorksShowId(Long worksShowId) {
-        this.worksShowId = worksShowId;
+    public void setWorks_show_id(Long works_show_id) {
+        this.works_show_id = works_show_id;
     }
 
-    public Long getUserId() {
-        return userId;
+    public Long getUser_id() {
+        return user_id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser_id(Long user_id) {
+        this.user_id = user_id;
     }
 
     public String getPic1() {
@@ -154,48 +146,48 @@ public class WorksShow extends Model<WorksShow> {
         this.price = price;
     }
 
-    public Integer getLikeNumber() {
-        return likeNumber;
+    public Integer getLike_number() {
+        return like_number;
     }
 
-    public void setLikeNumber(Integer likeNumber) {
-        this.likeNumber = likeNumber;
+    public void setLike_number(Integer like_number) {
+        this.like_number = like_number;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public Long getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Long create_time) {
+        this.create_time = create_time;
     }
 
-    public Long getUpdateTime() {
-        return updateTime;
+    public Long getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdate_time(Long update_time) {
+        this.update_time = update_time;
     }
 
-    public Integer getIsDel() {
-        return isDel;
+    public Integer getIs_del() {
+        return is_del;
     }
 
-    public void setIsDel(Integer isDel) {
-        this.isDel = isDel;
+    public void setIs_del(Integer is_del) {
+        this.is_del = is_del;
     }
 
     @Override
     protected Serializable pkVal() {
-        return this.worksShowId;
+        return this.works_show_id;
     }
 
     @Override
     public String toString() {
-        return "WorksShow{" +
-        "worksShowId=" + worksShowId +
-        ", userId=" + userId +
+        return "Works_show{" +
+        "works_show_id=" + works_show_id +
+        ", user_id=" + user_id +
         ", pic1=" + pic1 +
         ", pic2=" + pic2 +
         ", pic3=" + pic3 +
@@ -204,10 +196,10 @@ public class WorksShow extends Model<WorksShow> {
         ", pic6=" + pic6 +
         ", remark=" + remark +
         ", price=" + price +
-        ", likeNumber=" + likeNumber +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", isDel=" + isDel +
+        ", like_number=" + like_number +
+        ", create_time=" + create_time +
+        ", update_time=" + update_time +
+        ", is_del=" + is_del +
         "}";
     }
 }

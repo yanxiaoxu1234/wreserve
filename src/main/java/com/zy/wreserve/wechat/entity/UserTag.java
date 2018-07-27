@@ -4,9 +4,7 @@ import java.io.Serializable;
 
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
-import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
-import com.baomidou.mybatisplus.annotations.TableName;
 import java.io.Serializable;
 
 /**
@@ -14,10 +12,9 @@ import java.io.Serializable;
  * 工作人员标签表
  * </p>
  *
- * @author zy123
- * @since 2018-07-26
+ * @author zy
+ * @since 2018-07-27
  */
-@TableName("user_tag")
 public class UserTag extends Model<UserTag> {
 
     private static final long serialVersionUID = 1L;
@@ -26,73 +23,69 @@ public class UserTag extends Model<UserTag> {
      * 主键Id
      */
     @TableId(value = "user_tag_id", type = IdType.AUTO)
-    private Long userTagId;
+    private Long user_tag_id;
     /**
      * 标签名称
      */
-    @TableField("tag_name")
-    private String tagName;
-    @TableField("create_time")
-    private Long createTime;
-    @TableField("update_time")
-    private Long updateTime;
-    @TableField("is_del")
-    private Integer isDel;
+    private String tag_name;
+    private Long create_time;
+    private Long update_time;
+    private Integer is_del;
 
 
-    public Long getUserTagId() {
-        return userTagId;
+    public Long getUser_tag_id() {
+        return user_tag_id;
     }
 
-    public void setUserTagId(Long userTagId) {
-        this.userTagId = userTagId;
+    public void setUser_tag_id(Long user_tag_id) {
+        this.user_tag_id = user_tag_id;
     }
 
-    public String getTagName() {
-        return tagName;
+    public String getTag_name() {
+        return tag_name;
     }
 
-    public void setTagName(String tagName) {
-        this.tagName = tagName;
+    public void setTag_name(String tag_name) {
+        this.tag_name = tag_name;
     }
 
-    public Long getCreateTime() {
-        return createTime;
+    public Long getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Long createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Long create_time) {
+        this.create_time = create_time;
     }
 
-    public Long getUpdateTime() {
-        return updateTime;
+    public Long getUpdate_time() {
+        return update_time;
     }
 
-    public void setUpdateTime(Long updateTime) {
-        this.updateTime = updateTime;
+    public void setUpdate_time(Long update_time) {
+        this.update_time = update_time;
     }
 
-    public Integer getIsDel() {
-        return isDel;
+    public Integer getIs_del() {
+        return is_del;
     }
 
-    public void setIsDel(Integer isDel) {
-        this.isDel = isDel;
+    public void setIs_del(Integer is_del) {
+        this.is_del = is_del;
     }
 
     @Override
     protected Serializable pkVal() {
-        return this.userTagId;
+        return this.user_tag_id;
     }
 
     @Override
     public String toString() {
-        return "UserTag{" +
-        "userTagId=" + userTagId +
-        ", tagName=" + tagName +
-        ", createTime=" + createTime +
-        ", updateTime=" + updateTime +
-        ", isDel=" + isDel +
+        return "User_tag{" +
+        "user_tag_id=" + user_tag_id +
+        ", tag_name=" + tag_name +
+        ", create_time=" + create_time +
+        ", update_time=" + update_time +
+        ", is_del=" + is_del +
         "}";
     }
 }

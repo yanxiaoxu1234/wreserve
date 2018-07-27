@@ -13,7 +13,6 @@ import java.net.URLConnection;
 
 /**
  * 模拟客户端发起http请求
- * Author:Lucare.Feng
  */
 public class HttpHelper {
 

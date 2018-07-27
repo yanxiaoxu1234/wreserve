@@ -4,20 +4,20 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.ReservationRecord">
-        <id column="reservation_record_id" property="reservationRecordId" />
-        <result column="user_id" property="userId" />
-        <result column="service_user_id" property="serviceUserId" />
-        <result column="service_user_name" property="serviceUserName" />
-        <result column="reservation_time" property="reservationTime" />
-        <result column="reservation_project" property="reservationProject" />
-        <result column="reservation_project_name" property="reservationProjectName" />
-        <result column="reservation_number" property="reservationNumber" />
-        <result column="reservation_remark" property="reservationRemark" />
+        <id column="reservation_record_id" property="reservation_record_id" />
+        <result column="user_id" property="user_id" />
+        <result column="service_user_id" property="service_user_id" />
+        <result column="service_user_name" property="service_user_name" />
+        <result column="reservation_time" property="reservation_time" />
+        <result column="reservation_project" property="reservation_project" />
+        <result column="reservation_project_name" property="reservation_project_name" />
+        <result column="reservation_number" property="reservation_number" />
+        <result column="reservation_remark" property="reservation_remark" />
         <result column="status" property="status" />
         <result column="advice" property="advice" />
-        <result column="create_time" property="createTime" />
-        <result column="update_time" property="updateTime" />
-        <result column="is_del" property="isDel" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+        <result column="is_del" property="is_del" />
     </resultMap>
 
 </mapper>

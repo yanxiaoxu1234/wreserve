@@ -1,7 +1,6 @@
 package com.zy.wreserve.common.constant;
 
 /**
- * Created by fengcs on 2018/2/3.
  */
 public class AuthConstant {
     /**
