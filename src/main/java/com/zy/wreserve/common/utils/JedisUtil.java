@@ -1,9 +1,11 @@
 package com.zy.wreserve.common.utils;
 
+import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 
+@Component
 public class JedisUtil {
     // Redis 服务器 IP
     private String address = "58.87.79.131";
@@ -12,7 +14,7 @@ public class JedisUtil {
     private int port = 6379;
 
     // 访问密码
-    private String password = "920619";
+    //private String password = "920619";
 
     // 连接 redis 等待时间
     private int timeOut = 10000;
@@ -41,7 +43,7 @@ public class JedisUtil {
             config.setMaxIdle(maxIdle);
             config.setMaxWaitMillis(maxWait);
             config.setTestOnBorrow(testOnBorrow);
-            jedisPool = new JedisPool(config, address, port, timeOut, password);
+            jedisPool = new JedisPool(config, address, port, timeOut, null);
         } catch(Exception e) {
             e.printStackTrace();
         }
