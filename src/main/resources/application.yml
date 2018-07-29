@@ -5,9 +5,9 @@ logging:
 
 wechat:
   mp:
-    appId: wx8f18aee9694d50b0
-    secret: 0421a7e4d0305e733d67f7a71d64f503
-    token: 123456
+    appId: wx3fcb154832732b75
+    secret: 6961c68cc55aad7fc460a03fb08b281c
+    token: l492LBlIFo2040n04mNwFBOZ0289v90l
     aesKey: SHA1
 server:
   port: 8080
@@ -20,9 +20,9 @@ spring:
 
 #mybatis
 mybatis-plus:
-  mapper-locations: classpath:com/zy/wreserve/*/mapper/*Mapper.xml
+  mapper-locations: classpath*:com/zy/wreserve/**/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.zy.wreserve.*.entity
+  typeAliasesPackage: com.zy.wreserve.wechat.entity
   global-config:
     #刷新mapper 调试神器
     db-config:
@@ -39,10 +39,7 @@ mybatis-plus:
       logic-not-delete-value: 1
       db-type: h2
     refresh: true
-      #自定义填充策略接口实现
-      #meta-object-handler: com.baomidou.springboot.xxx
-      #自定义SQL注入器
-      #sql-injector: com.baomidou.springboot.xxx
+
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false

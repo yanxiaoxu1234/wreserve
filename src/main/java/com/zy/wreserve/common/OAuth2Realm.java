@@ -1,9 +1,12 @@
 package com.zy.wreserve.common;
 
+import com.zy.wreserve.common.exception.OAuth2AuthenticationException;
 import com.zy.wreserve.common.shiro.AuthSubjectUtil;
+import com.zy.wreserve.wechat.entity.OAuth2Token;
 import com.zy.wreserve.wechat.entity.Role;
 import com.zy.wreserve.wechat.entity.User;
 import com.zy.wreserve.wechat.service.IUserService;
+import me.chanjar.weixin.common.error.WxErrorException;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.result.WxMpOAuth2AccessToken;
 import org.apache.shiro.authc.AuthenticationException;
@@ -74,21 +77,38 @@ public class OAuth2Realm extends AuthorizingRealm {
      * @throws AuthenticationException
      */
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
-        WxMpOAuth2AccessToken oAuth2Token = (WxMpOAuth2AccessToken) token;
-        String openId = oAuth2Token.getOpenId();
-        User user = userService.findByOpenId(openId);
+        OAuth2Token oAuth2Token = (OAuth2Token) token;
+        //获取code
+        String code = oAuth2Token.getAuthCode();
+        String openId = extractUserOpenId(code);
+        System.out.print(openId);
+//        User user = userService.findUserByOpenId(openId);
+//        //数据库中有此用户
+//        if(user!=null){
+//            List<Role> list = userService.findRolePermissions(user.getOpen_id());
+//            user.setRoleList(list);
+//            SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(user,openId, getName());
+//            return info;
+//
+//        }else {
+//            //用户首次登陆系统
+//        }
+        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo("username","password", getName());
+        System.out.print(info);
+        return info;
+    }
 
-        if(user!=null){
-            List<Role> list = userService.findRolePermissions(user.getOpen_id());
-            user.setRoleList(list);
-            SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(user,oAuth2Token, getName());
-            return info;
+    private String extractUserOpenId(String code) {
+
+        try {
+            WxMpOAuth2AccessToken token = wxService.oauth2getAccessToken(code);
+            String openId = token.getOpenId();
+            return openId;
+        } catch (WxErrorException e) {
+            e.printStackTrace();
+            throw new OAuth2AuthenticationException(e);
         }
-//        String code = oAuth2Token.getAuthCode(); //获取 auth code
-//        String username = extractUsername(code); // 提取用户名
-//        SimpleAuthenticationInfo authenticationInfo = new SimpleAuthenticationInfo(username, code, getName());
 
-        return null;
     }
 
 }

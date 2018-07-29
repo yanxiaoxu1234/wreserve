@@ -35,13 +35,18 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IU
     private RolePermissionMapper rolePermissionMapper;
 
     @Override
+    public User findUserByOpenId(String openid) {
+        return userMapper.findUserByOpenId(openid);
+    }
+
+    @Override
     public User findByName(String name) {
         return userMapper.findByName(name);
     }
 
     @Override
-    public List<Role> findRolePermissions(long uid) {
-        List<Role> roleIdList = userRoleMapper.findRoleListByUserId(uid);
+    public List<Role> findRolePermissions(String openid) {
+        List<Role> roleIdList = userRoleMapper.findRoleListByUserId(openid);
         for (Role role : roleIdList) {
             Set<String> everyRolePer = rolePermissionMapper.findPermissions(role.getId());
             role.setPerNameSet(everyRolePer);

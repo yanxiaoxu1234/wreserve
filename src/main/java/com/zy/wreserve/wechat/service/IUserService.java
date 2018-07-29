@@ -17,9 +17,11 @@ import java.util.List;
  */
 public interface IUserService extends IService<User> {
 
+    User findUserByOpenId(String openid);
+
     User findByName(String name);
 
-    List<Role> findRolePermissions(long uid);
+    List<Role> findRolePermissions(String openid);
 
     Page<User> selectUserPage(Page<User> page);
 }

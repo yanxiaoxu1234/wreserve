@@ -12,13 +12,8 @@ public class AuthSubjectUtil {
     /**
      * 系统管理员账号
      */
-    public static final String SUPPLIER_ADMIN_USERNAME = "admin";
+    public static final Integer SUPPLIER_ADMIN_USERNAME = 1;
 
-    public static boolean isPatformAdmin(String principal) {
-        if (StringUtils.isEmpty(principal))
-            return false;
-        return SUPPLIER_ADMIN_USERNAME.equalsIgnoreCase(principal);
-    }
 
     /**
      * 判断是否平台管理员账号登录
@@ -28,6 +23,6 @@ public class AuthSubjectUtil {
         if (subject == null)
             return false;
         User user = (User) subject.getPrincipal();
-        return SUPPLIER_ADMIN_USERNAME.equalsIgnoreCase(user.getUser_name().trim());
+        return SUPPLIER_ADMIN_USERNAME.equals(user.getPosition_id());
     }
 }

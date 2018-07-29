@@ -16,8 +16,8 @@ import com.baomidou.kisso.web.interceptor.SSOSpringInterceptor;
  * @author 青苗
  * @since 2017-08-08
  */
-@ControllerAdvice
-@Configuration
+//@ControllerAdvice
+//@Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
 
     @Override

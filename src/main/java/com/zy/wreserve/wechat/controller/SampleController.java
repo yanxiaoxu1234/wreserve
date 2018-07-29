@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @author 青苗
  * @since 2017-08-08
  */
-@Controller
+//@Controller
 public class SampleController {
 
     @Autowired
@@ -27,19 +27,20 @@ public class SampleController {
     protected HttpServletResponse response;
 
     @ResponseBody
-    @RequestMapping("/")
+    @RequestMapping("/kisso")
     public String home() {
         return "Hello Kisso!";
     }
 
-    // 授权登录
-    @ResponseBody
-    @RequestMapping("/login")
-    public String login() {
-        // 设置登录 COOKIE
-        SSOHelper.setCookie(request, response, SSOToken.create().setIp(request).setId(1000).setIssuer("kisso"), false);
-        return "login success!";
-    }
+//    // 授权登录
+//    @ResponseBody
+//    @RequestMapping("/login")
+//    public String login() {
+//        // 设置登录 COOKIE
+////        SSOHelper.setCookie(request, response, SSOToken.create().setIp(request).setId(1000).setIssuer("kisso"), false);
+//
+//        return "login success!";
+//    }
 
     // 查看登录信息
     @ResponseBody

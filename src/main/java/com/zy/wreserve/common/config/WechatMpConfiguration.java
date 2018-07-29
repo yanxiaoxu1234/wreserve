@@ -24,6 +24,7 @@ import static me.chanjar.weixin.common.api.WxConsts.*;
 @ConditionalOnClass(WxMpService.class)
 @EnableConfigurationProperties(WechatMpProperties.class)
 public class WechatMpConfiguration {
+
   @Autowired
   protected LogHandler logHandler;
   @Autowired
@@ -33,7 +34,7 @@ public class WechatMpConfiguration {
   @Autowired
   protected StoreCheckNotifyHandler storeCheckNotifyHandler;
   @Autowired
-  private WechatMpProperties properties;
+    private WechatMpProperties properties;
   @Autowired
   private LocationHandler locationHandler;
   @Autowired
