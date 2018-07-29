@@ -1,6 +1,6 @@
 package com.zy.wreserve.wechat.service.impl;
 
-import com.zy.wreserve.mapper.IntegralRecordMapper;
+import com.zy.wreserve.wechat.mapper.IntegralRecordMapper;
 import com.zy.wreserve.wechat.entity.IntegralRecord;
 import com.zy.wreserve.wechat.service.IIntegralRecordService;
 import com.zy.wreserve.wechat.service.support.BaseServiceImpl;

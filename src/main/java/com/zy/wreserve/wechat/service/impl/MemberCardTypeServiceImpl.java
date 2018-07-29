@@ -1,7 +1,7 @@
 package com.zy.wreserve.wechat.service.impl;
 
 
-import com.zy.wreserve.mapper.MemberCardTypeMapper;
+import com.zy.wreserve.wechat.mapper.MemberCardTypeMapper;
 import com.zy.wreserve.wechat.entity.MemberCardType;
 import com.zy.wreserve.wechat.service.IMemberCardTypeService;
 import com.zy.wreserve.wechat.service.support.BaseServiceImpl;

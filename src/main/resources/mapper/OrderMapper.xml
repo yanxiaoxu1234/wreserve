@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zy.wreserve.wechat.mapper.OrderMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.Order">
+        <id column="order_id" property="order_id" />
+        <result column="user_id" property="user_id" />
+        <result column="order_sn" property="order_sn" />
+        <result column="desk_status" property="desk_status" />
+        <result column="status" property="status" />
+        <result column="pay_status" property="pay_status" />
+        <result column="pay_type" property="pay_type" />
+        <result column="product_price" property="product_price" />
+        <result column="delivery_price" property="delivery_price" />
+        <result column="tootal_price" property="tootal_price" />
+        <result column="address_detail" property="address_detail" />
+        <result column="province" property="province" />
+        <result column="city" property="city" />
+        <result column="add_conn_name" property="add_conn_name" />
+        <result column="add_conn_phone" property="add_conn_phone" />
+        <result column="add_conn_sex" property="add_conn_sex" />
+        <result column="order_remark" property="order_remark" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+        <result column="is_del" property="is_del" />
+    </resultMap>
+
+</mapper>

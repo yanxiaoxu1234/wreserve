@@ -1,7 +1,7 @@
 package com.zy.wreserve.wechat.service.impl;
 
 import com.zy.wreserve.wechat.entity.OrderProgress;
-import com.zy.wreserve.mapper.OrderProgressMapper;
+import com.zy.wreserve.wechat.mapper.OrderProgressMapper;
 import com.zy.wreserve.wechat.service.IOrderProgressService;
 import com.zy.wreserve.wechat.service.support.BaseServiceImpl;
 import org.springframework.stereotype.Service;

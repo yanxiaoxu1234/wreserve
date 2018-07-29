@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zy.wreserve.wechat.mapper.ShopMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.Shop">
+        <id column="shop_id" property="shop_id" />
+        <result column="shop_name" property="shop_name" />
+        <result column="shop_phone" property="shop_phone" />
+        <result column="shop_address_detail" property="shop_address_detail" />
+        <result column="shop_img" property="shop_img" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+        <result column="is_del" property="is_del" />
+    </resultMap>
+
+</mapper>

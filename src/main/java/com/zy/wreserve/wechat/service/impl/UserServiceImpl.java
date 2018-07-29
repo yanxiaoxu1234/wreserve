@@ -1,9 +1,9 @@
 package com.zy.wreserve.wechat.service.impl;
 
 import com.baomidou.mybatisplus.plugins.Page;
-import com.zy.wreserve.mapper.RolePermissionMapper;
-import com.zy.wreserve.mapper.UserMapper;
-import com.zy.wreserve.mapper.UserRoleMapper;
+import com.zy.wreserve.wechat.mapper.RolePermissionMapper;
+import com.zy.wreserve.wechat.mapper.UserMapper;
+import com.zy.wreserve.wechat.mapper.UserRoleMapper;
 import com.zy.wreserve.wechat.entity.Role;
 import com.zy.wreserve.wechat.entity.User;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;

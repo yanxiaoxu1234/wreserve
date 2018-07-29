@@ -1,6 +1,6 @@
 package com.zy.wreserve.wechat.service.impl;
 
-import com.zy.wreserve.mapper.RoleMapper;
+import com.zy.wreserve.wechat.mapper.RoleMapper;
 import com.zy.wreserve.wechat.entity.Role;
 import com.zy.wreserve.wechat.service.IRoleService;
 import com.zy.wreserve.wechat.service.support.BaseServiceImpl;

@@ -1,3 +1,9 @@
+spring:
+  datasource:
+    name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://bj-cdb-h20soudg.sql.tencentcdb.com:63095/wechat
+    username: root
+    password: z951837256
 logging:
   level:
     org.springframework.web: DEBUG
@@ -11,16 +17,12 @@ wechat:
     aesKey: SHA1
 server:
   port: 8080
-spring:
-  datasource:
-    name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://bj-cdb-h20soudg.sql.tencentcdb.com:63095/wechat
-    username: root
-    password: z951837256
+
 
 #mybatis
 mybatis-plus:
-  mapper-locations: classpath*:com/zy/wreserve/**/*Mapper.xml
+#  mapper-locations: classpath:/com/zy/wreserve/**/*Mapper.xml
+  mapper-locations: /mapper/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
   typeAliasesPackage: com.zy.wreserve.wechat.entity
   global-config:

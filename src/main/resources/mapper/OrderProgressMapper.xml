@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zy.wreserve.wechat.mapper.OrderProgressMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.OrderProgress">
+        <id column="order_progress_id" property="order_progress_id" />
+        <result column="order_id" property="order_id" />
+        <result column="order_status" property="order_status" />
+        <result column="pay_status" property="pay_status" />
+        <result column="operation_user_id" property="operation_user_id" />
+        <result column="create_time" property="create_time" />
+        <result column="update_time" property="update_time" />
+        <result column="is_del" property="is_del" />
+    </resultMap>
+
+</mapper>

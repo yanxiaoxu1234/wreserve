@@ -80,8 +80,9 @@ public class OAuth2Realm extends AuthorizingRealm {
         OAuth2Token oAuth2Token = (OAuth2Token) token;
         //获取code
         String code = oAuth2Token.getAuthCode();
-        String openId = extractUserOpenId(code);
-        System.out.print(openId);
+        SimpleAuthenticationInfo info = extractUserInfo(code);
+        System.out.print(info);
+
 //        User user = userService.findUserByOpenId(openId);
 //        //数据库中有此用户
 //        if(user!=null){
@@ -93,17 +94,16 @@ public class OAuth2Realm extends AuthorizingRealm {
 //        }else {
 //            //用户首次登陆系统
 //        }
-        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo("username","password", getName());
-        System.out.print(info);
         return info;
     }
 
-    private String extractUserOpenId(String code) {
-
+    private SimpleAuthenticationInfo extractUserInfo(String code) {
+        SimpleAuthenticationInfo info = null;
         try {
             WxMpOAuth2AccessToken token = wxService.oauth2getAccessToken(code);
-            String openId = token.getOpenId();
-            return openId;
+
+            info = new SimpleAuthenticationInfo(token.getOpenId(),token.getAccessToken(),getName());
+            return info;
         } catch (WxErrorException e) {
             e.printStackTrace();
             throw new OAuth2AuthenticationException(e);

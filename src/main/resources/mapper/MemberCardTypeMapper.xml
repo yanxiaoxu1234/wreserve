@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zy.wreserve.wechat.mapper.MemberCardTypeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.MemberCardType">
+        <id column="member_card_type_id" property="member_card_type_id" />
+        <result column="member_card_type_name" property="member_card_type_name" />
+        <result column="member_type_price" property="member_type_price" />
+        <result column="member_card_type_color" property="member_card_type_color" />
+        <result column="valid_time" property="valid_time" />
+        <result column="discounts" property="discounts" />
+        <result column="is_forever" property="is_forever" />
+        <result column="create_tame" property="create_tame" />
+        <result column="update_time" property="update_time" />
+        <result column="is_del" property="is_del" />
+    </resultMap>
+
+</mapper>

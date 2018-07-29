@@ -98,11 +98,7 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-jdbc</artifactId>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>com.baomidou</groupId>-->
-            <!--<artifactId>mybatisplus-spring-boot-starter</artifactId>-->
-            <!--<version>1.0.5</version>-->
-        <!--</dependency>-->
+
         <!-- Kisso相关 -->
         <dependency>
             <groupId>com.baomidou</groupId>
@@ -129,17 +125,32 @@
             <version>1.7</version>
         </dependency>
 
-
     </dependencies>
 
+
+
     <build>
+        <resources>
+            <resource>
+                <directory>src/main/java/wreserve</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**/mapper/*.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.* </include>
+                </includes>
+            </resource>
+        </resources>
+
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
-
-
         </plugins>
     </build>
 

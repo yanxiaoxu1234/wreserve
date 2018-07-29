@@ -1,6 +1,6 @@
 package com.zy.wreserve.wechat.service.impl;
 
-import com.zy.wreserve.mapper.EvaluateServiceMapper;
+import com.zy.wreserve.wechat.mapper.EvaluateServiceMapper;
 import com.zy.wreserve.wechat.entity.EvaluateService;
 import com.zy.wreserve.wechat.service.IEvaluateServiceService;
 import com.zy.wreserve.wechat.service.support.BaseServiceImpl;
