@@ -22,8 +22,8 @@
     </resultMap>
 
 
-    <select id="findUserByOpenId" resultType="User">
-        select * from user where open_id = ${openid}
+    <select id="findUserByOpenId" resultMap="BaseResultMap" resultType="User">
+        select * from user where open_id = '${openid}'
     </select>
 
 </mapper>

@@ -6,6 +6,8 @@ import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.activerecord.Model;
+import org.apache.shiro.authc.AuthenticationToken;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -73,6 +75,7 @@ public class User extends Model<User> {
 
     @TableField(exist = false)
     private List<Role> roleList;
+
 
 
     public Long getUser_id() {

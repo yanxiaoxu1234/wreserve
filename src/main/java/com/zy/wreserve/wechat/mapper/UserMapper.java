@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.zy.wreserve.wechat.entity.User;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.cache.annotation.CacheConfig;
 
 import java.util.List;
 
@@ -15,6 +16,7 @@ import java.util.List;
  * @author zy
  * @since 2018-07-27
  */
+//@CacheConfig(cacheNames = "users")
 public interface UserMapper extends BaseMapper<User> {
 
     User findByName(String name);

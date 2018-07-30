@@ -5,6 +5,7 @@ import com.zy.wreserve.wechat.entity.OAuth2Token;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationToken;
+import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.AuthenticatingFilter;
@@ -14,11 +15,12 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.Objects;
 
-public class OAuth2AuthenticationFilter extends AuthenticatingFilter {
+public class MyFilter extends AuthenticatingFilter {
 
     //oauth2 authc code参数名
-    private String authcCodeParam = "code";
+    private String OPEN_ID = "openid";
     //客户端id
     private String clientId;
     //服务器端登录成功/失败后重定向到的客户端地址
@@ -28,11 +30,11 @@ public class OAuth2AuthenticationFilter extends AuthenticatingFilter {
     private String failureUrl;
 
     public String getAuthcCodeParam() {
-        return authcCodeParam;
+        return OPEN_ID;
     }
 
     public void setAuthcCodeParam(String authcCodeParam) {
-        this.authcCodeParam = authcCodeParam;
+        this.OPEN_ID = authcCodeParam;
     }
 
     public String getClientId() {
@@ -68,11 +70,8 @@ public class OAuth2AuthenticationFilter extends AuthenticatingFilter {
     }
 
     protected AuthenticationToken createToken(ServletRequest request, ServletResponse response) throws Exception {
-        Subject subject = SecurityUtils.getSubject();
-        Session session = subject.getSession();
-        HttpServletRequest httpRequest = (HttpServletRequest) request;
-        String code = httpRequest.getParameter(authcCodeParam);
-        return new OAuth2Token(code);
+
+        return new UsernamePasswordToken();
     }
 
     /**
@@ -102,7 +101,7 @@ public class OAuth2AuthenticationFilter extends AuthenticatingFilter {
         }
         Subject subject = getSubject(request, response);
         if(!subject.isAuthenticated()) {
-            if(StringUtils.isEmpty(request.getParameter(authcCodeParam))) {
+            if(StringUtils.isEmpty(request.getParameter(OPEN_ID))) {
                 //如果用户没有身份验证，且没有auth code，则重定向到服务端授权
                 saveRequestAndRedirectToLogin(request, response);
                 return false;

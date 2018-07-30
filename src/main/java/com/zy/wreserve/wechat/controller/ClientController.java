@@ -9,18 +9,23 @@ import me.chanjar.weixin.mp.bean.result.WxMpOAuth2AccessToken;
 import me.chanjar.weixin.mp.bean.result.WxMpUser;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
+import org.apache.shiro.crypto.hash.Md5Hash;
+import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * Created by zy
@@ -49,12 +54,48 @@ public class ClientController {
      */
 
     @RequestMapping("/login")
-    public String login(HttpServletRequest request, HttpServletResponse response) {
+    public String index(HttpServletRequest request,HttpServletResponse response) {
+        //判断有无session信息
+        Subject subject = SecurityUtils.getSubject();
+        Session session = subject.getSession(false);
+        if (Objects.isNull(session)){
+            //说明没有登陆信息，或者session有效期已过，重定向至授权页面
 
-        String sourcrUrl = "http://zhyonk.tunnel.echomod.cn/getCode";
-        String getCodeurl = wxService.oauth2buildAuthorizationUrl(sourcrUrl, WxConsts.OAuth2Scope.SNSAPI_BASE, null);
+        }else {
+            //有session信息,获取sessionID
+            Serializable id = session.getId();
 
-        return "redirect:" +getCodeurl;
+        }
+
+        String userName = request.getParameter("openid");
+        String password = request.getParameter("password");
+        if (userName != null && password != null) {
+//            String md5Pwd = new Md5Hash(password, AuthConstant.salt).toString();
+//            String md5Pwd = new Md5Hash(password).toString();
+            UsernamePasswordToken token = new UsernamePasswordToken(userName, password,"");
+
+            logger.info("对用户[" + userName + "]进行登录验证..验证开始");
+            try {
+                subject.login(token);
+                //验证是否登录成功
+                if (subject.isAuthenticated()) {
+                    logger.info("用户[" + userName + "]登录认证通过(这里可以进行一些认证通过后的一些系统参数初始化操作)");
+                    return "redirect:/";
+                } else {
+                    token.clear();
+                    return "redirect:/login";
+                }
+            } catch (UnknownAccountException uae) {
+                logger.info("对用户[" + userName + "]进行登录验证..验证失败-username wasn't in the system");
+            } catch (IncorrectCredentialsException ice) {
+                logger.info("对用户[" + userName + "]进行登录验证..验证失败-password didn't match");
+            } catch (LockedAccountException lae) {
+                logger.info("对用户[" + userName + "]进行登录验证..验证失败-account is locked in the system");
+            } catch (AuthenticationException ae) {
+                logger.error(ae.getMessage());
+            }
+        }
+        return "/";
     }
 
     @RequestMapping("/getCode")

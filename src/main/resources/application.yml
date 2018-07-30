@@ -4,6 +4,17 @@ spring:
     url: jdbc:mysql://bj-cdb-h20soudg.sql.tencentcdb.com:63095/wechat
     username: root
     password: z951837256
+  redis:
+        host: 58.87.79.131
+        port: 6379
+        password:
+        timeout: 10000
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 0
+          max-wait: 10000
+
 logging:
   level:
     org.springframework.web: DEBUG
