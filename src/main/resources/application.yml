@@ -5,7 +5,9 @@ spring:
     username: root
     password: z951837256
   redis:
-        host: 58.87.79.131
+
+#        host: 58.87.79.131
+        host: 127.0.0.1
         port: 6379
         password:
         timeout: 10000
@@ -35,7 +37,7 @@ mybatis-plus:
 #  mapper-locations: classpath:/com/zy/wreserve/**/*Mapper.xml
   mapper-locations: /mapper/*Mapper.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.zy.wreserve.com.zy.wreserve.entity
+  typeAliasesPackage: com.zy.wreserve.wechat.entity
   global-config:
     #刷新mapper 调试神器
     db-config:

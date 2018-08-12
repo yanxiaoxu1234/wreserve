@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zy.wreserve.com.zy.wreserve.mapper.EvaluateWorksShowMapper">
+<mapper namespace="com.zy.wreserve.wechat.mapper.EvaluateWorksShowMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zy.wreserve.com.zy.wreserve.entity.EvaluateWorksShow">
+    <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.EvaluateWorksShow">
         <id column="evaluate_works_show_id" property="evaluate_works_show_id" />
         <result column="evaluate_primary_id" property="evaluate_primary_id" />
         <result column="works_show_id" property="works_show_id" />

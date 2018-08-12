@@ -57,7 +57,7 @@ public class MyGenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setTablePrefix(new String[]{"t_"});// 此处可以修改为您的表前缀
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
-        strategy.setSuperServiceImplClass("com.zy.wreserve.com.zy.wreserve.service.support.BaseServiceImpl");
+        strategy.setSuperServiceImplClass("com.zy.wreserve.wechat.service.support.BaseServiceImpl");
 //        strategy.setDbColumnUnderline(true);
         // strategy.setInclude(new String[] { "user" }); // 需要生成的表
         strategy.setExclude(new String[]{}); // 排除生成的表

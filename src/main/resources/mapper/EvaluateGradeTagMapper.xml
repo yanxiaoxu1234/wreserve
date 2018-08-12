@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zy.wreserve.com.zy.wreserve.mapper.EvaluateGradeTagMapper">
+<mapper namespace="com.zy.wreserve.wechat.mapper.EvaluateGradeTagMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zy.wreserve.com.zy.wreserve.entity.EvaluateGradeTag">
+    <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.EvaluateGradeTag">
         <id column="evaluate_grade_tag_id" property="evaluate_grade_tag_id" />
         <result column="evaluate_grade_id" property="evaluate_grade_id" />
         <result column="tag_name" property="tag_name" />
