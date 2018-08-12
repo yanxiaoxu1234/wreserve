@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zy.wreserve.wechat.mapper.OrderDetailMapper">
+<mapper namespace="com.zy.wreserve.com.zy.wreserve.mapper.OrderDetailMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.OrderDetail">
+    <resultMap id="BaseResultMap" type="com.zy.wreserve.com.zy.wreserve.entity.OrderDetail">
         <id column="order_detail_id" property="order_detail_id" />
         <result column="order_id" property="order_id" />
         <result column="product_id" property="product_id" />

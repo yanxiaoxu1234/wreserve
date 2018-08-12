@@ -1,6 +1,6 @@
 package com.zy.wreserve;
 
-import com.zy.wreserve.common.utils.JedisUtil;
+import com.zy.wreserve.utils.JedisUtil;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

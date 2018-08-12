@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zy.wreserve.wechat.mapper.UserRoleMapper">
+<mapper namespace="com.zy.wreserve.com.zy.wreserve.mapper.UserRoleMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zy.wreserve.wechat.entity.UserRole">
+    <resultMap id="BaseResultMap" type="com.zy.wreserve.com.zy.wreserve.entity.UserRole">
         <id column="id" property="id" />
         <result column="open_id" property="open_id" />
         <result column="role_id" property="role_id" />

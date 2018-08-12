@@ -6,10 +6,20 @@
     <groupId>com.zy</groupId>
     <artifactId>wreserve</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>pom</packaging>
 
     <name>wreserve</name>
     <description>Base Wechat Reseerve System</description>
+    <modules>
+        <module>wreserve-shiro</module>
+        <module>wreserve-wechat</module>
+        <module>wreserve-util</module>
+        <module>wreserve-config</module>
+        <module>wreserve-service</module>
+        <module>wreserve-dao</module>
+        <module>wreserve-entity</module>
+        <module>wreserve-webapi</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
