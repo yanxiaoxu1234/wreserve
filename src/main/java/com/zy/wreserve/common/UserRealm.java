@@ -44,22 +44,17 @@ public class UserRealm  extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
         logger.info("验证当前Subject时获取到token为：" + ReflectionToStringBuilder.toString(token, ToStringStyle.MULTI_LINE_STYLE));
-
         User hasUser = userService.findUserByOpenId(token.getUsername());
+
+        SimpleAuthenticationInfo info = null;
+
+
+        if (hasUser == null) {
+            return info;
+        }
         String open_id = hasUser.getOpen_id();
         String password = hasUser.getPassword();
-
-        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(open_id, password, getName());
-//        if (hasUser != null) {
-//            // 若存在，将此用户存放到登录认证info中，无需自己做密码对比，Shiro会为我们进行密码对比校验
-//            // @link org.apache.shiro.realm.AuthenticatingRealm#assertCredentialsMatch
-//            List<Role> list = userService.findRolePermissions(hasUser.getOpen_id());
-//            hasUser.setRoleList(list);
-//            SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(hasUser, hasUser.getPassword(), getName());
-//            // @link HashedCredentialsMatcher#doCredentialsMatch
-////            info.setCredentialsSalt(ByteSource.Util.bytes(AuthConstant.salt));
-//            return info;
-//        }
+         info = new SimpleAuthenticationInfo(open_id, password, getName());
         return info;
     }
 }
