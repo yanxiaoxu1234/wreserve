@@ -30,8 +30,6 @@ import java.util.Map;
 @Configuration
 public class ShiroConfiguration {
 
-
-
     @Bean(name = "lifecycleBeanPostProcessor")
     public LifecycleBeanPostProcessor lifecycleBeanPostProcessor() {
         return new LifecycleBeanPostProcessor();
@@ -94,11 +92,13 @@ public class ShiroConfiguration {
         shiroFilterFactoryBean.setUnauthorizedUrl("/403");
         //自定义拦截器
         Map<String, Filter> filtersMap = new LinkedHashMap<String, Filter>();
+
 //        filtersMap.put("myFilter", new MyFilter());
         shiroFilterFactoryBean.setFilters(filtersMap);
         //拦截器.
         Map<String, String> filterChainDefinitionManager = new LinkedHashMap<>();
 
+        filterChainDefinitionManager.put("/**","authc");
 //        filterChainDefinitionManager.put("/*","myFilter");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionManager);
 

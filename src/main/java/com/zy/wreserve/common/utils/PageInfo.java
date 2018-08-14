@@ -2,150 +2,84 @@ package com.zy.wreserve.common.utils;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
 /**
  * @description：分页实体类 (结合jqery easyui)
  */
-public class PageInfo {
+public class PageInfo implements Serializable {
 
-    private final static int PAGESIZE = 10; //默认显示的记录数 
 
-    private int total; // 总记录 
-    private List rows; //显示的记录  
+    private static final long serialVersionUID = 1L;
+    /**
+     * 总记录数
+     */
+    private Long total;
+    /**
+     * 总页数
+     */
+    private Long totalPages;
+    /**
+     * 当前页
+     */
+    private Integer pageNo;
+    /**
+     * 页记录数
+     */
+    private Integer pageSize;
 
-    @JsonIgnore
-    private int from;
-    @JsonIgnore
-    private int size;
-    @JsonIgnore
-    private int nowpage; // 当前页 
-    @JsonIgnore
-    private int pagesize; // 每页显示的记录数 
-    @JsonIgnore
-    private Map<String, Object> condition; //查询条件
-
-    @JsonIgnore
-    private String sort = "seq";// 排序字段
-    @JsonIgnore
-    private String order = "asc";// asc，desc mybatis Order 关键字
-
-    public PageInfo() {
-    }
-
-    //构造方法
-    public PageInfo(int nowpage, int pagesize) {
-        //计算当前页  
-        if (nowpage < 0) {
-            this.nowpage = 1;
-        } else {
-            //当前页
-            this.nowpage = nowpage;
-        }
-        //记录每页显示的记录数  
-        if (pagesize < 0) {
-            this.pagesize = PAGESIZE;
-        } else {
-            this.pagesize = pagesize;
-        }
-        //计算开始的记录和结束的记录  
-        this.from = (this.nowpage - 1) * this.pagesize;
-        this.size = this.pagesize;
-    }
-
-    // 构造方法
-    public PageInfo(int nowpage, int pagesize, String sort, String order) {
-        // 计算当前页  
-        if (nowpage < 0) {
-            this.nowpage = 1;
-        } else {
-            // 当前页
-            this.nowpage = nowpage;
-        }
-        // 记录每页显示的记录数  
-        if (pagesize < 0) {
-            this.pagesize = PAGESIZE;
-        } else {
-            this.pagesize = pagesize;
-        }
-        // 计算开始的记录和结束的记录  
-        this.from = (this.nowpage - 1) * this.pagesize;
-        this.size = this.pagesize;
-        // 排序字段，正序还是反序
-        this.sort = sort;
-        this.order = order;
-    }
-
-    public int getTotal() {
-        return total;
-    }
-
-    public void setTotal(int total) {
+    public PageInfo(Long total) {
         this.total = total;
     }
 
-    public List getRows() {
-        return rows;
+    public PageInfo(Long total, Integer pageNo,
+                    Integer pageSize) {
+        this.total = total;
+        this.totalPages = (total - 1) / pageSize + 1;
+        this.pageNo = pageNo;
+        this.pageSize = pageSize;
     }
 
-    public void setRows(List rows) {
-        this.rows = rows;
+    public static PageInfo page(Long total) {
+        return new PageInfo(total);
     }
 
-    public int getFrom() {
-        return from;
+    public static PageInfo page( Long total, Integer pageNo,
+                                 Integer pageSize) {
+        return new PageInfo(total, pageNo, pageSize);
     }
 
-    public void setFrom(int from) {
-        this.from = from;
+    public Long getTotal() {
+        return total;
     }
 
-    public int getSize() {
-        return size;
+    public void setTotal(Long total) {
+        this.total = total;
     }
 
-    public void setSize(int size) {
-        this.size = size;
+    public Long getTotalPages() {
+        return totalPages;
     }
 
-    public int getNowpage() {
-        return nowpage;
+    public void setTotalPages(Long totalPages) {
+        this.totalPages = totalPages;
     }
 
-    public void setNowpage(int nowpage) {
-        this.nowpage = nowpage;
+    public Integer getPageNo() {
+        return pageNo;
     }
 
-    public int getPagesize() {
-        return pagesize;
+    public void setPageNo(Integer pageNo) {
+        this.pageNo = pageNo;
     }
 
-    public void setPagesize(int pagesize) {
-        this.pagesize = pagesize;
+    public Integer getPageSize() {
+        return pageSize;
     }
 
-    public Map<String, Object> getCondition() {
-        return condition;
-    }
-
-    public void setCondition(Map<String, Object> condition) {
-        this.condition = condition;
-    }
-
-    public String getSort() {
-        return sort;
-    }
-
-    public void setSort(String sort) {
-        this.sort = sort;
-    }
-
-    public String getOrder() {
-        return order;
-    }
-
-    public void setOrder(String order) {
-        this.order = order;
+    public void setPageSize(Integer pageSize) {
+        this.pageSize = pageSize;
     }
 }

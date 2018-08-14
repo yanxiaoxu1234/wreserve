@@ -43,11 +43,10 @@ public class UserRealm  extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
-        logger.info("验证当前Subject时获取到token为：" + ReflectionToStringBuilder.toString(token, ToStringStyle.MULTI_LINE_STYLE));
+        logger.info("验证当前Subject时获取到token为：" + ReflectionToStringBuilder.toString(token, ToStringStyle.SIMPLE_STYLE));
         User hasUser = userService.findUserByOpenId(token.getUsername());
 
         SimpleAuthenticationInfo info = null;
-
 
         if (hasUser == null) {
             return info;

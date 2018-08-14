@@ -2,6 +2,7 @@ package com.zy.wreserve.wechat.controller;
 
 import com.alibaba.druid.util.StringUtils;
 import com.zy.wreserve.common.constant.ConstantKey;
+import com.zy.wreserve.common.utils.Resp;
 import com.zy.wreserve.wechat.entity.User;
 import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.common.error.WxErrorException;
@@ -40,25 +41,13 @@ public class AuthController {
     public String authorize(HttpServletRequest request, HttpSession session,HttpServletResponse response) {
         String url = "http://zhyonk.tunnel.echomod.cn/login";
         String getCodeurl = wxService.oauth2buildAuthorizationUrl(url, WxConsts.OAuth2Scope.SNSAPI_BASE, null);
+        logger.info("重定向至:"+getCodeurl);
         return "redirect:"+getCodeurl;
     }
 
     @RequestMapping("/getCode")
-    public String getCode(HttpServletRequest request,HttpServletResponse response) {
-        String code = request.getParameter("code");
-
-        try {
-            WxMpOAuth2AccessToken wxMpOAuth2AccessToken = wxService.oauth2getAccessToken(code);
-            String openId = wxMpOAuth2AccessToken.getOpenId();
-            String unionId = wxMpOAuth2AccessToken.getUnionId();
-            System.out.print("Openid:"+openId);
-            System.out.print("UnionId:"+unionId);
-        } catch (WxErrorException e) {
-            e.printStackTrace();
-        }
-        System.out.print(request.getRequestURI());
-
-        return null;
+    public Resp getCode(HttpServletRequest request, HttpServletResponse response) {
+        return Resp.success("这是getCode页面");
     }
 
 
